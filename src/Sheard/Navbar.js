@@ -63,22 +63,22 @@ const Navbar = () => {
                                             className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
                                         >Home</NavLink>
                                         <NavLink
-                                            to={'manageItem'}
+                                            to={'products'}
                                             className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
-                                        >Manage Items</NavLink>
-                                        <NavLink
-                                            to={'addItem'}
-                                            className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
-                                        >Add Item</NavLink>
-                                        <NavLink
-                                            to={'myItem'}
-                                            className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
-                                        >My Items
-                                        </NavLink>
+                                        >Products</NavLink>
                                         <NavLink
                                             to={'blog'}
                                             className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
-                                        >Blog
+                                        >Blog</NavLink>
+                                        <NavLink
+                                            to={'myProfile'}
+                                            className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
+                                        >My Profile
+                                        </NavLink>
+                                        <NavLink
+                                            to={'dashboard'}
+                                            className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
+                                        >Dashbord
                                         </NavLink>
 
                                     </div>
@@ -152,22 +152,22 @@ const Navbar = () => {
                                 className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
                             >Home</NavLink>
                             <NavLink
-                                to={'manageItem'}
+                                to={'products'}
                                 className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
-                            >Manage Items</NavLink>
-                            <NavLink
-                                to={'addItem'}
-                                className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
-                            >Add Items</NavLink>
-                            <NavLink
-                                to={'myItem'}
-                                className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
-                            >My Items
-                            </NavLink>
+                            >Products</NavLink>
                             <NavLink
                                 to={'blog'}
                                 className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
-                            >Blog
+                            >Blog</NavLink>
+                            <NavLink
+                                to={'myProfile'}
+                                className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
+                            >My Profile
+                            </NavLink>
+                            <NavLink
+                                to={'dashboard'}
+                                className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
+                            >Dashbord
                             </NavLink>
                         </div>
                         <div className="px-2 pt-2 pb-3 space-y-1">
