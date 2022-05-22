@@ -32,10 +32,14 @@ function App() {
         <Route path='/dashboard' element={<Dashboard></Dashboard>}>
 
           <Route path='myOrders' element={<MyOrders></MyOrders>}></Route>
-
           <Route path='addReview' element={<AddReview></AddReview>}></Route>
-
           <Route path='myProfile' element={<DasMyProfiles></DasMyProfiles>}></Route>
+
+          {/* for admin */}
+          <Route path='myOrders' element={<MyOrders></MyOrders>}></Route>
+          <Route path='myOrders' element={<MyOrders></MyOrders>}></Route>
+          <Route path='myOrders' element={<MyOrders></MyOrders>}></Route>
+          <Route path='myOrders' element={<MyOrders></MyOrders>}></Route>
 
         </Route>
 

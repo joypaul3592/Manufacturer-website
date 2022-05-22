@@ -9,10 +9,10 @@ import auth from '../Firebase/Firebase.init'
 import { signOut } from 'firebase/auth';
 
 
-
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
+
 const Navbar = () => {
 
     const location = useLocation()
@@ -71,10 +71,12 @@ const Navbar = () => {
                                             to={'/'}
                                             className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
                                         >Home</NavLink>
-                                        <NavLink
-                                            to={'products'}
-                                            className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
-                                        >Products</NavLink>
+                                        {
+                                            user?.uid && <NavLink
+                                                to={'products'}
+                                                className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
+                                            >Products</NavLink>
+                                        }
                                         <NavLink
                                             to={'blog'}
                                             className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
@@ -84,11 +86,13 @@ const Navbar = () => {
                                             className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
                                         >My Profile
                                         </NavLink>
-                                        <NavLink
-                                            to={'dashboard'}
-                                            className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
-                                        >Dashboard
-                                        </NavLink>
+                                        {
+                                            user?.uid && <NavLink
+                                                to={'dashboard/myOrders'}
+                                                className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
+                                            >Dashboard
+                                            </NavLink>
+                                        }
 
                                     </div>
                                 </div>
@@ -158,10 +162,12 @@ const Navbar = () => {
                                 to={'/'}
                                 className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
                             >Home</NavLink>
-                            <NavLink
-                                to={'products'}
-                                className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
-                            >Products</NavLink>
+                            {
+                                user?.uid && <NavLink
+                                    to={'products'}
+                                    className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
+                                >Products</NavLink>
+                            }
                             <NavLink
                                 to={'blog'}
                                 className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
@@ -171,12 +177,13 @@ const Navbar = () => {
                                 className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
                             >My Profile
                             </NavLink>
-                            <NavLink
-                                to={'dashboard'}
-                                className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
-                            >Dashbord
-                            </NavLink>
-
+                            {
+                                user?.uid && <NavLink
+                                    to={'dashboard/myOrders'}
+                                    className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
+                                >Dashboard
+                                </NavLink>
+                            }
                         </div>
                         <div className="px-2 pt-2 pb-3 space-y-1">
                             <div className="flex items-center justify-center h-full">

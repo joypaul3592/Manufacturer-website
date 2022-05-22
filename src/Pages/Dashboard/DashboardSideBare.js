@@ -5,6 +5,7 @@ const DashboardSideBare = ({ children }) => {
     return (
         <div className=' max-w-7xl mx-auto px-8'>
             <h1 className='my-12 text-4xl text-center text-slate-700 font-bold' >DashBoard</h1>
+            <div class="divider"></div>
             <div class="drawer w-full drawer-mobile  h-[80vh] mt-16">
                 <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
                 <div class="drawer-content flex flex-col items-center justify-center">
@@ -19,6 +20,12 @@ const DashboardSideBare = ({ children }) => {
                         <li><NavLink to='myOrders'>My Orders</NavLink></li>
                         <li><NavLink to='addReview'>Add Review</NavLink></li>
                         <li><NavLink to='myProfile'>My Profile</NavLink></li>
+
+                        {/* for admin */}
+                        <li><NavLink to='myProfile'>Manage Orders</NavLink></li>
+                        <li><NavLink to='myProfile'>Add Product</NavLink></li>
+                        <li><NavLink to='myProfile'>Manage Products</NavLink></li>
+                        <li><NavLink to='myProfile'>Make Admin</NavLink></li>
                     </ul>
 
                 </div>
