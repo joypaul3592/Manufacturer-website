@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../../Sheard/Navbar';
 import Bussiness from './Bussiness';
+import Contact from './Contact';
 import Header from './Header';
 import Offer from './Offer';
 import Products from './Products';
@@ -15,6 +16,7 @@ const Home = () => {
             <Bussiness></Bussiness>
             <Review></Review>
             <Offer></Offer>
+            <Contact></Contact>
         </div>
     );
 };
