@@ -9,6 +9,7 @@ import Home from './Pages/Home/Home';
 import MyProfile from './Pages/MyProfile/MyProfile';
 import Product from './Pages/Product/Product';
 import Login from './Pages/UserLogin/Login';
+import SignUp from './Pages/UserLogin/SignUp';
 import Navbar from './Sheard/Navbar';
 
 
@@ -22,6 +23,7 @@ function App() {
         <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='/myProfile' element={<MyProfile></MyProfile>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/signUp' element={<SignUp></SignUp>}></Route>
         {/* public Route */}
 
 
