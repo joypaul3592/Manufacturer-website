@@ -1,11 +1,12 @@
 import React from 'react';
 import Navbar from '../../Sheard/Navbar';
+import Header from './Header';
 
 const Home = () => {
     return (
         <div>
-            <Navbar></Navbar>
-            <h1>This is Home</h1>
+
+            <Header></Header>
         </div>
     );
 };
