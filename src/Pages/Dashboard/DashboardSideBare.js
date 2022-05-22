@@ -3,17 +3,18 @@ import { NavLink } from 'react-router-dom';
 
 const DashboardSideBare = ({ children }) => {
     return (
-        <div className=' max-w-7xl mx-auto px-8'>
+        <div className=' max-w-7xl mx-auto px-8 '>
             <h1 className='my-12 text-4xl text-center text-slate-700 font-bold' >DashBoard</h1>
             <div class="divider"></div>
-            <div class="drawer w-full drawer-mobile  h-[80vh] mt-16">
+            <div class="drawer w-full drawer-mobile ">
                 <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-                <div class="drawer-content flex flex-col items-center justify-center">
+
+                <div class="drawer-content  ">
                     {children}
                     <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
                 </div>
-                <div class="drawer-side ">
+                <div class="drawer-side h-[50vh] mt-16 ">
                     <label for="my-drawer-2" class="drawer-overlay "></label>
                     <ul class="menu bg-base-100 p-4 overflow-y-auto w-80 text-base-content mr-8 rounded-r-2xl shadow-xl">
                         {/* <!-- Sidebar content here --> */}
@@ -22,10 +23,10 @@ const DashboardSideBare = ({ children }) => {
                         <li><NavLink to='myProfile'>My Profile</NavLink></li>
 
                         {/* for admin */}
-                        <li><NavLink to='myProfile'>Manage Orders</NavLink></li>
-                        <li><NavLink to='myProfile'>Add Product</NavLink></li>
-                        <li><NavLink to='myProfile'>Manage Products</NavLink></li>
-                        <li><NavLink to='myProfile'>Make Admin</NavLink></li>
+                        <li><NavLink to='manageOrders'>Manage Orders</NavLink></li>
+                        <li><NavLink to='addProduct'>Add Product</NavLink></li>
+                        <li><NavLink to='manageProducts'>Manage Products</NavLink></li>
+                        <li><NavLink to='makeAdmin'>Make Admin</NavLink></li>
                     </ul>
 
                 </div>
