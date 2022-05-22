@@ -6,7 +6,8 @@ import offerBannar2 from '../../assect/offerBannar2.webp'
 
 const Offer = () => {
     return (
-        <div className='max-w-7xl mx-auto my-16'>
+        <div className='max-w-7xl mx-auto my-56'>
+            <h1 className='mb-12 text-4xl text-center text-primary font-bold' >Get Offer!</h1>
             <div className=' grid grid-cols-2 gap-6'>
                 <div className='h-[500px] overflow-hidden' style={{ backgroundImage: `url(${offerMan})`, backgroundSize: 'cover' }}>
                     <div className="text-left ml-8">
