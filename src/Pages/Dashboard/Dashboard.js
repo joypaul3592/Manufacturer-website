@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import DashboardSideBare from './DashboardSideBare';
 
-const Dashboard = ({ children }) => {
+const Dashboard = () => {
     return (
         <DashboardSideBare>
             <Outlet />

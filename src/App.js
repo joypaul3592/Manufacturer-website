@@ -27,11 +27,7 @@ function App() {
 
         {/* Privet Route */}
         <Route path='/products' element={<Product />} />
-        <Route path='/dashboard' element={<Dashboard>
-
-
-
-        </Dashboard>}>
+        <Route path='/dashboard' element={<Dashboard></Dashboard>}>
 
           <Route path='myOrders' element={<MyOrders></MyOrders>}></Route>
 

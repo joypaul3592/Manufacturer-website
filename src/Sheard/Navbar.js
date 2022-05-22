@@ -1,12 +1,13 @@
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
-// import { signOut } from 'firebase/auth';
-// import { Fragment, useEffect, useState } from 'react';
-// import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, NavLink, useLocation } from 'react-router-dom'
-// import { toast } from 'react-toastify';
+import { Fragment, useEffect } from 'react'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import logo from '../assect/Logo.png'
-// import auth from '../../Firebase/Firebase.init'
+import auth from '../Firebase/Firebase.init'
+import { signOut } from 'firebase/auth';
+
 
 
 function classNames(...classes) {
@@ -14,18 +15,24 @@ function classNames(...classes) {
 }
 const Navbar = () => {
 
-    // const location = useLocation()
-
-    // const [user] = useAuthState(auth)
-
-
-    // const userSignOut = () => {
-    //     signOut(auth)
-    //     toast.success('LogOut Successful!!')
-    // }
+    const location = useLocation()
+    const navigate = useNavigate()
+    const [user] = useAuthState(auth)
 
 
+    const userSignOut = () => {
+        signOut(auth)
+        toast.success('LogOut Successful!!')
+    }
 
+
+    const from = location.state?.from?.pathname || "/";
+
+    useEffect(() => {
+        if (user) {
+            navigate(from, { replace: true });
+        }
+    }, [user])
 
 
     return (
@@ -78,14 +85,14 @@ const Navbar = () => {
                                         <NavLink
                                             to={'dashboard'}
                                             className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
-                                        >Dashbord
+                                        >Dashboard
                                         </NavLink>
 
                                     </div>
                                 </div>
                                 <div className="  lg:static absolute right-0 sm:ml-6 mr-2">
                                     <div className="flex items-center justify-center h-full">
-                                        {/* {
+                                        {
                                             user?.uid ?
 
                                                 <Menu as="div" className="ml-3 relative">
@@ -108,13 +115,13 @@ const Navbar = () => {
                                                         leaveFrom="transform opacity-100 scale-100"
                                                         leaveTo="transform opacity-0 scale-95"
                                                     >
-                                                        <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-5 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                                        <Menu.Items className="origin-top-right pl-8 absolute right-0 mt-2 w-48 rounded-md shadow-lg py-5 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                                                             <NavLink
-                                                                to={'/myItem'}
-                                                                className={({ isActive }) => (`block mb-3  text-base font-semibold ${isActive ? 'text-blue-500' : 'text-black'}`)}>My Product</NavLink>
+                                                                to={'/dashboard'}
+                                                                className={({ isActive }) => (`block mb-3  text-base font-semibold ${isActive ? 'text-blue-500' : 'text-black'}`)}>Dashboard</NavLink>
 
                                                             <NavLink
-                                                                to={'login'}
+                                                                to={'/'}
                                                                 onClick={userSignOut}
                                                                 className={({ isActive }) => (`block mt3  text-base font-semibold ${isActive ? 'text-blue-500' : 'text-black'}`)}>
                                                                 LogOut
@@ -136,7 +143,7 @@ const Navbar = () => {
                                                     to={'login'}
                                                     className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium ${isActive ? 'text-blue-500' : 'text-black'}`)}
                                                 >Login</NavLink>
-                                        } */}
+                                        }
 
 
                                     </div>
@@ -169,10 +176,11 @@ const Navbar = () => {
                                 className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
                             >Dashbord
                             </NavLink>
+
                         </div>
                         <div className="px-2 pt-2 pb-3 space-y-1">
                             <div className="flex items-center justify-center h-full">
-                                {/* {
+                                {
                                     user?.uid ? <NavLink
                                         to={'login'}
                                         onClick={() => { signOut(auth) }}
@@ -185,7 +193,7 @@ const Navbar = () => {
                                             to={'login'}
                                             className={({ isActive }) => (`px-3 py-2 rounded-md text-xl font-medium block ${isActive ? 'text-blue-500' : 'text-black'}`)}
                                         >Login</NavLink>
-                                } */}
+                                }
                             </div>
                         </div>
                     </Disclosure.Panel>
