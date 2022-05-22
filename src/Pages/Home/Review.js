@@ -2,11 +2,11 @@ import React from 'react';
 
 const Review = () => {
     return (
-        <div className='max-w-7xl mx-auto my-16'>
+        <div className='max-w-7xl mx-auto my-16 px-8'>
             <h1 className='mb-12 text-4xl text-center text-primary font-bold' >Customar Say</h1>
 
-            <div className="grid grid-cols-3 gap-5">
-                <div class="card w-96 bg-base-100 shadow-2xl">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
+                <div class="card  bg-base-100 shadow-2xl">
                     <div class="card-body">
                         <div class="card-actions justify-center">
                             <div class="avatar">
@@ -19,7 +19,7 @@ const Review = () => {
                     </div>
                 </div>
 
-                <div class="card w-96 bg-base-100 shadow-2xl">
+                <div class="card  bg-base-100 shadow-2xl">
                     <div class="card-body">
                         <div class="card-actions justify-center">
                             <div class="avatar">
@@ -32,7 +32,7 @@ const Review = () => {
                     </div>
                 </div>
 
-                <div class="card w-96 bg-base-100 shadow-2xl">
+                <div class="card  bg-base-100 shadow-2xl">
                     <div class="card-body">
                         <div class="card-actions justify-center">
                             <div class="avatar">

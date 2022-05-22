@@ -4,7 +4,7 @@ const Products = () => {
     return (
         <div>
             <h1 className=' my-20 text-4xl text-center text-primary font-bold'>BEST SELLER PRODUCT</h1>
-            <div className=' max-w-7xl mx-auto px-10 grid grid-cols-3 gap-5 my-10'>
+            <div className=' max-w-7xl mx-auto px-10 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 my-10'>
                 <div class="card bg-base-100 shadow-xl">
                     <figure><img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" /></figure>
                     <div class="card-body">
