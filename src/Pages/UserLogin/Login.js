@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../Firebase/Firebase.init';
 import useToken from '../../Hook/useToken';
+import Loading from '../../Sheard/Loading';
 
 const Login = () => {
 
@@ -34,10 +35,9 @@ const Login = () => {
 
 
 
-
-    // if (gLoading || loading) {
-    //     return <Loading></Loading>
-    // }
+    if (gLoading || loading) {
+        return <Loading></Loading>
+    }
 
 
     if (gError || error) {

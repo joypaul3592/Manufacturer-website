@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-// import Loading from "../Loading/Loading";
+import Loading from "../Sheard/Loading";
+
 
 function useProduct() {
     const [products, setProducts] = useState([]);
@@ -17,9 +18,9 @@ function useProduct() {
     }, [products])
 
 
-    // if (!products) {
-    //     return <Loading></Loading>
-    // }
+    if (!products) {
+        return <Loading></Loading>
+    }
 
     return [products, setProducts]
 

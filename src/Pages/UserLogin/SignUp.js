@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-// import Loading from '../Sheard/Loading';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../Firebase/Firebase.init';
 import useToken from '../../Hook/useToken';
+import Loading from '../../Sheard/Loading';
 
 
 const SignUp = () => {
@@ -36,17 +36,14 @@ const SignUp = () => {
 
 
 
-    // if (gLoading || loading || updating) {
-    //     return <Loading></Loading>
-    // }
+    if (gLoading || loading || updating) {
+        return <Loading></Loading>
+    }
 
 
     if (gError || error || updateError) {
         signInError = <p className=' text-red-500 text-xs'>{error?.message || gError?.message || updateError?.message}</p>
     }
-
-
-
 
 
 
