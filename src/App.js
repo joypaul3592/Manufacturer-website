@@ -7,6 +7,7 @@ import AddProduct from './Pages/Dashboard/AddProduct';
 import AddReview from './Pages/Dashboard/AddReview';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import DasMyProfiles from './Pages/Dashboard/DasMyProfiles';
+import EditProfile from './Pages/Dashboard/EditProfile';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import ManageOrders from './Pages/Dashboard/ManageOrders';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
@@ -37,7 +38,8 @@ function App() {
 
           <Route path='myOrders' element={<MyOrders></MyOrders>}></Route>
           <Route path='addReview' element={<AddReview></AddReview>}></Route>
-          <Route path='myProfile' element={<DasMyProfiles></DasMyProfiles>}></Route>
+          <Route path='myProfile' element={<DasMyProfiles></DasMyProfiles>}>
+          </Route>
 
           {/* for admin */}
           <Route path='manageOrders' element={<ManageOrders></ManageOrders>}></Route>

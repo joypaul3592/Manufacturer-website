@@ -7,7 +7,7 @@ const Products = () => {
 
     const [products, setProducts] = useProduct();
 
-    console.log(products)
+
 
     return (
         <div>
