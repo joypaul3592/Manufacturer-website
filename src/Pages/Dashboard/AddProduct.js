@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import auth from '../../Firebase/Firebase.init';
 
 const AddProduct = () => {
 
@@ -12,7 +14,7 @@ const AddProduct = () => {
 
 
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
-
+    const [user] = useAuthState(auth)
 
 
     // useEffect(() => {
@@ -40,6 +42,7 @@ const AddProduct = () => {
             image: data.image,
             stock: data.stock,
             dec: data.dec,
+            email: user.email,
         }
         console.log(product);
         try {
