@@ -1,5 +1,7 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 const AddProduct = () => {
 
@@ -9,14 +11,7 @@ const AddProduct = () => {
 
 
 
-    const { register, formState: { errors }, handleSubmit } = useForm();
-
-
-
-
-
-
-
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
 
 
@@ -37,10 +32,31 @@ const AddProduct = () => {
 
 
 
-    const onSubmit = data => {
+    const onSubmit = async (data) => {
         console.log(data)
-    };
+        const product = {
+            name: data.name,
+            price: data.price,
+            image: data.image,
+            stock: data.stock,
+            dec: data.dec,
+        }
+        console.log(product);
+        try {
+            const { data } = await axios.post(`http://localhost:5000/product`, product);
 
+
+            if (!data.success) {
+                return toast.error(data.error)
+            }
+            console.log(data);
+            toast.success(data.message);
+            reset()
+
+        } catch (error) {
+            toast.error(error.message)
+        }
+    };
 
 
 

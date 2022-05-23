@@ -1,49 +1,21 @@
 import React from 'react';
+import useProduct from '../../Hook/useProduct';
+import Product from './Product';
 
 const Products = () => {
+
+
+    const [products, setProducts] = useProduct();
+
+    console.log(products)
+
     return (
         <div>
             <h1 className=' my-20 text-4xl text-center text-primary font-bold'>BEST SELLER PRODUCT</h1>
             <div className=' max-w-7xl mx-auto px-10 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 my-10'>
-                <div class="card bg-base-100 shadow-xl">
-                    <figure><img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" /></figure>
-                    <div class="card-body">
-                        <h2 class="card-title text-center">
-                            Shoes
-                        </h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
-                        <p>Available Stok : <span>785</span></p>
-                        <p>Order Quantity : <span>75</span></p>
-                        <button className='btn'>Buy Now</button>
-                    </div>
-                </div>
-
-                <div class="card bg-base-100 shadow-xl">
-                    <figure><img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" /></figure>
-                    <div class="card-body">
-                        <h2 class="card-title text-center">
-                            Shoes
-                        </h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
-                        <p>Available Stok : <span>785</span></p>
-                        <p>Order Quantity : <span>75</span></p>
-                        <button className='btn'>Buy Now</button>
-                    </div>
-                </div>
-
-
-                <div class="card bg-base-100 shadow-xl">
-                    <figure><img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" /></figure>
-                    <div class="card-body">
-                        <h2 class="card-title text-center">
-                            Shoes
-                        </h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
-                        <p>Available Stok : <span>785</span></p>
-                        <p>Order Quantity : <span>75</span></p>
-                        <button className='btn'>Buy Now</button>
-                    </div>
-                </div>
+                {
+                    products.map(product => <Product key={product._id} product={product} ></Product>)
+                }
             </div>
         </div>
     );

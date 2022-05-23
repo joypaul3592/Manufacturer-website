@@ -1,4 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import ProtectRoute from './Authentication/ProtectRoute';
 import Blog from './Pages/Blog/Blog';
 import AddProduct from './Pages/Dashboard/AddProduct';
@@ -11,7 +13,6 @@ import ManageProducts from './Pages/Dashboard/ManageProducts';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import Home from './Pages/Home/Home';
 import MyProfile from './Pages/MyProfile/MyProfile';
-import Product from './Pages/Product/Product';
 import Login from './Pages/UserLogin/Login';
 import SignUp from './Pages/UserLogin/SignUp';
 import Navbar from './Sheard/Navbar';
@@ -32,7 +33,6 @@ function App() {
 
 
         {/* Privet Route */}
-        <Route path='/products' element={<Product />} />
         <Route path='/dashboard' element={<Dashboard></Dashboard>}>
 
           <Route path='myOrders' element={<MyOrders></MyOrders>}></Route>
@@ -50,7 +50,7 @@ function App() {
         {/* Privet Route */}
 
       </Routes>
-
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

@@ -35,7 +35,7 @@ const Navbar = () => {
     }, [user])
 
 
-    console.log(user)
+
 
     return (
         <Disclosure
@@ -71,12 +71,6 @@ const Navbar = () => {
                                             to={'/'}
                                             className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
                                         >Home</NavLink>
-                                        {
-                                            user?.uid && <NavLink
-                                                to={'products'}
-                                                className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
-                                            >Products</NavLink>
-                                        }
                                         <NavLink
                                             to={'blog'}
                                             className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
@@ -162,12 +156,6 @@ const Navbar = () => {
                                 to={'/'}
                                 className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
                             >Home</NavLink>
-                            {
-                                user?.uid && <NavLink
-                                    to={'products'}
-                                    className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
-                                >Products</NavLink>
-                            }
                             <NavLink
                                 to={'blog'}
                                 className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
