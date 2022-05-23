@@ -2,7 +2,9 @@ import React, { useEffect } from 'react';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../Firebase/Firebase.init';
+import useToken from '../../Hook/useToken';
 
 const Login = () => {
 
@@ -12,7 +14,7 @@ const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
-
+    const [token] = useToken(user || gUser)
 
     const navigate = useNavigate()
     const location = useLocation();
@@ -24,10 +26,11 @@ const Login = () => {
 
 
     useEffect(() => {
-        if (user) {
+        if (token) {
+            toast.success('Successfully Login');
             navigate(from, { replace: true });
         }
-    }, [user])
+    }, [token])
 
 
 

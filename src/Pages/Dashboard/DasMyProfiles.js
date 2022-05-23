@@ -27,12 +27,12 @@ const DasMyProfiles = () => {
                 </div>
 
 
-                <div class="py-10 ">
-                    <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+                <div className="py-10 ">
+                    <input id="my-drawer" type="checkbox" className="drawer-toggle" />
 
-                    <div class="drawer-side ">
-                        <label for="my-drawer" class="drawer-overlay"></label>
-                        <ul class="menu p-4 px-16 mx-auto overflow-y-auto w-full  mr-20 text-base-content bg-white">
+                    <div className="drawer-side ">
+                        <label for="my-drawer" className="drawer-overlay"></label>
+                        <ul className="menu p-4 px-16 mx-auto overflow-y-auto w-full  mr-20 text-base-content bg-white">
 
                             <EditProfile></EditProfile>
                         </ul>

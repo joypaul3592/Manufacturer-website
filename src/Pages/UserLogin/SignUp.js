@@ -3,8 +3,10 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 import { useForm } from "react-hook-form";
 // import Loading from '../Sheard/Loading';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-// import useToken from '../../Hook/useToken';
+import { toast } from 'react-toastify';
 import auth from '../../Firebase/Firebase.init';
+import useToken from '../../Hook/useToken';
+
 
 const SignUp = () => {
 
@@ -13,7 +15,7 @@ const SignUp = () => {
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
 
-    // const [token] = useToken(user || gUser)
+    const [token] = useToken(user || gUser);
 
     let signInError;
     const navigate = useNavigate()
@@ -23,13 +25,14 @@ const SignUp = () => {
 
 
     useEffect(() => {
-        if (user) {
+        if (token) {
+            toast.success('Successfully SignUp');
             navigate(from, { replace: true });
         }
-    }, [user])
+    }, [token])
 
 
-    console.log(user);
+
 
 
 
@@ -48,15 +51,14 @@ const SignUp = () => {
 
 
     const onSubmit = async (data) => {
-        console.log(data)
         await createUserWithEmailAndPassword(data.email, data.password);
         const displayName = data.name;
         const photoURL = data.image;
-        console.log(displayName, photoURL);
+        // console.log(displayName, photoURL);
         await updateProfile({ displayName, photoURL });
     };
 
-    console.log(user);
+    // console.log(user);
 
 
     return (

@@ -26,20 +26,19 @@ function App() {
       <Routes>
         {/* public Route */}
         <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/blog' element={<Blog></Blog>}></Route>
-        <Route path='/myProfile' element={<MyProfile></MyProfile>}></Route>
-        <Route path='/login' element={<Login></Login>}></Route>
-        <Route path='/signUp' element={<SignUp></SignUp>}></Route>
+        <Route path='blog' element={<Blog></Blog>}></Route>
+        <Route path='myProfile' element={<MyProfile></MyProfile>}></Route>
+        <Route path='login' element={<Login></Login>}></Route>
+        <Route path='signUp' element={<SignUp></SignUp>}></Route>
         {/* public Route */}
 
 
         {/* Privet Route */}
-        <Route path='/dashboard' element={<Dashboard></Dashboard>}>
+        <Route path='dashboard' element={<Dashboard></Dashboard>}>
 
           <Route path='myOrders' element={<MyOrders></MyOrders>}></Route>
           <Route path='addReview' element={<AddReview></AddReview>}></Route>
-          <Route path='myProfile' element={<DasMyProfiles></DasMyProfiles>}>
-          </Route>
+          <Route path='myProfile' element={<DasMyProfiles></DasMyProfiles>}></Route>
 
           {/* for admin */}
           <Route path='manageOrders' element={<ManageOrders></ManageOrders>}></Route>

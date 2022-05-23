@@ -22,17 +22,18 @@ const Navbar = () => {
 
     const userSignOut = () => {
         signOut(auth)
+        localStorage.removeItem('accessToken');
         toast.success('LogOut Successful!!')
     }
 
 
-    const from = location.state?.from?.pathname || "/";
+    // const from = location.state?.from?.pathname || "/";
 
-    useEffect(() => {
-        if (user) {
-            navigate(from, { replace: true });
-        }
-    }, [user])
+    // useEffect(() => {
+    //     if (user) {
+    //         navigate(from, { replace: true });
+    //     }
+    // }, [user])
 
 
 

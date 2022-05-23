@@ -10,7 +10,7 @@ const MyOrders = () => {
     const [userProducts, setUserProducts] = useState([]);
 
     const [user] = useAuthState(auth)
-    const email = user.email;
+    const email = user?.email;
 
 
 
@@ -32,8 +32,8 @@ const MyOrders = () => {
 
 
     return (
-        <div class="w-full ">
-            <table class="table w-full">
+        <div className="w-full ">
+            <table className="table w-full">
                 {/* <!-- head --> */}
                 <thead >
                     <tr>
