@@ -22,8 +22,13 @@ const AddReview = () => {
         console.log(review);
 
         try {
-            const { data } = await axios.post(`http://localhost:5000/review`, review);
 
+            const { data } = await axios.post(`http://localhost:5000/review`, {
+                method: 'POST',
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            });
 
             if (!data.success) {
                 return toast.error(data.error)
