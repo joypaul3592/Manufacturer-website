@@ -21,6 +21,7 @@ const AddProduct = () => {
             price: data.price,
             image: data.image,
             stock: data.stock,
+            miniQuantity: data.miniQuantity,
             dec: data.dec,
             email: user.email,
         }
@@ -64,7 +65,7 @@ const AddProduct = () => {
                         </label>
                         <input
                             type="text"
-                            placeholder="Your Name"
+                            placeholder="Your Product Name"
                             className="input input-bordered w-full "
                             {...register("name", {
                                 required: {
@@ -127,6 +128,33 @@ const AddProduct = () => {
                     </div>
 
 
+
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text">Minimum Order</span>
+                        </label>
+                        <input
+                            type="number"
+                            placeholder="Product Minimum Order"
+                            className="input input-bordered w-full "
+                            {...register("miniQuantity", {
+                                required: {
+                                    value: true,
+                                    message: 'Minimum Order is required'
+                                }
+                            })}
+                        />
+                        <label className="label">
+                            {errors.miniQuantity?.type === 'required' && <span className="label-text-alt text-red-500">{errors?.miniQuantity?.message}</span>
+                            }
+
+                        </label>
+                    </div>
+
+
+
+
+
                     <div className="form-control w-full ">
                         <label className="label">
                             <span className="label-text">Image</span>
@@ -177,7 +205,6 @@ const AddProduct = () => {
 
                     <div className='text-center'>
                         <input className='btn btn-primary text-white  max-w-xs w-full ' type="submit" value='Add Product' />
-
                     </div>
 
                 </form>
