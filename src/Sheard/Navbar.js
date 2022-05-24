@@ -27,16 +27,6 @@ const Navbar = () => {
     }
 
 
-    // const from = location.state?.from?.pathname || "/";
-
-    // useEffect(() => {
-    //     if (user) {
-    //         navigate(from, { replace: true });
-    //     }
-    // }, [user])
-
-
-
 
     return (
         <Disclosure
@@ -83,7 +73,7 @@ const Navbar = () => {
                                         </NavLink>
                                         {
                                             user?.uid && <NavLink
-                                                to={'dashboard/myOrders'}
+                                                to={'dashboard/myProfile'}
                                                 className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
                                             >Dashboard
                                             </NavLink>
@@ -168,7 +158,7 @@ const Navbar = () => {
                             </NavLink>
                             {
                                 user?.uid && <NavLink
-                                    to={'dashboard/myOrders'}
+                                    to={'dashboard/myProfile'}
                                     className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
                                 >Dashboard
                                 </NavLink>

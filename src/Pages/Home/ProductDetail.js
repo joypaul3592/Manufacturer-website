@@ -77,10 +77,8 @@ const ProductDetail = () => {
                     phone: data.phone,
                 }
 
-
-                console.log(productDetail);
                 try {
-                    const { data } = await axios.post(`http://localhost:5000/jjjj`, productDetail, {
+                    const { data } = await axios.post(`http://localhost:5000/orders`, productDetail, {
                         method: 'POST',
                         headers: {
                             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -97,10 +95,10 @@ const ProductDetail = () => {
 
                 } catch (error) {
                     toast.error(error.message)
-                }
+                };
 
+                reset()
                 return
-
 
             } else {
                 toast.error(`Please Oder Minimum ${product.miniQuantity}`)
