@@ -1,18 +1,53 @@
+import axios from 'axios';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import auth from '../../Firebase/Firebase.init';
 
 const EditProfile = () => {
-    const { register, formState: { errors }, handleSubmit } = useForm();
+
+
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [user] = useAuthState(auth)
 
+
+
+
     const onSubmit = async (data) => {
-        console.log(data)
-        const displayName = data.name;
-        const photoURL = data.image;
-        console.log(displayName, photoURL);
-        // await updateProfile({ displayName, photoURL });
+
+        const email = user.email;
+        const userInfo = {
+            education: data.education,
+            address: data.address,
+            phone: data.phone,
+            birthday: data.birth,
+            name: user.displayName,
+            email: user.email,
+        }
+
+
+        console.log(userInfo);
+
+        try {
+            const { data } = await axios.post(`http://localhost:5000/userInfo/${email}`, userInfo, {
+                method: 'PUT',
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            });
+
+
+            if (!data.success) {
+                return toast.error(data.error)
+            }
+            console.log(data);
+            toast.success(data.message);
+            reset()
+
+        } catch (error) {
+            toast.error(error.message)
+        }
     };
 
 
@@ -30,21 +65,21 @@ const EditProfile = () => {
                 <div className="grid grid-cols-2 gap-5">
                     <div className="form-control w-full ">
                         <label className="label">
-                            <span className="label-text">Name</span>
+                            <span className="label-text">Education </span>
                         </label>
                         <input
                             type="text"
-                            placeholder="Your Name"
+                            placeholder="Your Educational Qualification"
                             className="input input-bordered w-full "
-                            {...register("name", {
+                            {...register("education", {
                                 required: {
                                     value: true,
-                                    message: 'name is required'
+                                    message: 'Educational Qualification is required'
                                 }
                             })}
                         />
                         <label className="label">
-                            {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors?.name?.message}</span>
+                            {errors.education?.type === 'required' && <span className="label-text-alt text-red-500">{errors?.education?.message}</span>
                             }
 
                         </label>
@@ -53,21 +88,21 @@ const EditProfile = () => {
 
                     <div className="form-control w-full ">
                         <label className="label">
-                            <span className="label-text">Name</span>
+                            <span className="label-text">Current Address</span>
                         </label>
                         <input
                             type="text"
-                            placeholder="Your Name"
+                            placeholder="Your Current Address"
                             className="input input-bordered w-full "
-                            {...register("name", {
+                            {...register("address", {
                                 required: {
                                     value: true,
-                                    message: 'name is required'
+                                    message: 'Address is required'
                                 }
                             })}
                         />
                         <label className="label">
-                            {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors?.name?.message}</span>
+                            {errors.address?.type === 'required' && <span className="label-text-alt text-red-500">{errors?.address?.message}</span>
                             }
 
                         </label>
@@ -77,21 +112,21 @@ const EditProfile = () => {
 
                     <div className="form-control w-full ">
                         <label className="label">
-                            <span className="label-text">Name</span>
+                            <span className="label-text">Phone</span>
                         </label>
                         <input
-                            type="text"
-                            placeholder="Your Name"
+                            type="number"
+                            placeholder="Your Phone Number"
                             className="input input-bordered w-full "
-                            {...register("name", {
+                            {...register("phone", {
                                 required: {
                                     value: true,
-                                    message: 'name is required'
+                                    message: 'Phone Number is required'
                                 }
                             })}
                         />
                         <label className="label">
-                            {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors?.name?.message}</span>
+                            {errors.phone?.type === 'required' && <span className="label-text-alt text-red-500">{errors?.phone?.message}</span>
                             }
 
                         </label>
@@ -100,21 +135,21 @@ const EditProfile = () => {
 
                     <div className="form-control w-full ">
                         <label className="label">
-                            <span className="label-text">Name</span>
+                            <span className="label-text">Date Of Birth</span>
                         </label>
                         <input
-                            type="text"
-                            placeholder="Your Name"
+                            type="date"
+                            placeholder="Your Date Of Birth"
                             className="input input-bordered w-full "
-                            {...register("name", {
+                            {...register("birth", {
                                 required: {
                                     value: true,
-                                    message: 'name is required'
+                                    message: 'Date Of Birth is required'
                                 }
                             })}
                         />
                         <label className="label">
-                            {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors?.name?.message}</span>
+                            {errors.birth?.type === 'required' && <span className="label-text-alt text-red-500">{errors?.birth?.message}</span>
                             }
 
                         </label>
