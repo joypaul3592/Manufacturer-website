@@ -24,10 +24,6 @@ const Review = () => {
 
 
 
-
-
-
-
     return (
         <div className='max-w-7xl mx-auto my-16 px-8'>
             <h1 className='mb-12 text-4xl text-center text-primary font-bold' >Customar Say</h1>

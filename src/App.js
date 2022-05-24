@@ -13,6 +13,7 @@ import ManageOrders from './Pages/Dashboard/ManageOrders';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import Home from './Pages/Home/Home';
+import ProductDetail from './Pages/Home/ProductDetail';
 import MyProfile from './Pages/MyProfile/MyProfile';
 import Login from './Pages/UserLogin/Login';
 import SignUp from './Pages/UserLogin/SignUp';
@@ -30,6 +31,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='blog' element={<Blog></Blog>}></Route>
         <Route path='myProfile' element={<RequireAuth><MyProfile></MyProfile></RequireAuth>}></Route>
+        <Route path='productDetail/:id' element={<RequireAuth><ProductDetail></ProductDetail></RequireAuth>}></Route>
         <Route path='login' element={<Login></Login>}></Route>
         <Route path='signUp' element={<SignUp></SignUp>}></Route>
         {/* public Route */}

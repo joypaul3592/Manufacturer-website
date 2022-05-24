@@ -10,7 +10,7 @@ const DasMyProfiles = () => {
 
     return (
         <div className='w-full '>
-            <h1 className=' text-3xl font-semibold text-primary ml-7 '>Add Review</h1>
+            <h1 className=' text-3xl font-semibold text-primary ml-7 uppercase'>My Profile</h1>
             <hr className='h-[1px] w-5/12 border-green-500 mt-3 mb-36 ml-7' />
             <div className='  '>
                 <div className='w-10/12 mx-auto border border-green-400  text-center py-8 rounded-xl'>
