@@ -1,12 +1,17 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink } from 'react-router-dom';
+import auth from '../../Firebase/Firebase.init';
+import useAdmin from '../../Hook/useAdmin';
 
 const DashboardSideBare = ({ children }) => {
+    const [user] = useAuthState(auth)
+    const [admin] = useAdmin(user);
+
+
+
     return (
         <div className=' max-w-7xl mx-auto px-8 py-10  mb-40'>
-            {/* <label  className="btn btn-primary drawer-button ">Open drawer</label> */}
-
-
 
             <h1 className=' text-4xl text-center text-slate-700 font-bold' >DashBoard</h1>
             <label for="my-drawer-2" tabindex="0" className="btn btn-ghost btn-circle lg:hidden">
@@ -23,16 +28,38 @@ const DashboardSideBare = ({ children }) => {
                 <div className="drawer-side  ">
                     <label for="my-drawer-2" className="drawer-overlay bg-green-500"></label>
                     <ul className="menu p-4 bg-base-100  overflow-y-auto w-80 text-base-content shadow-xl border-r-2">
-                        {/* <!-- Sidebar content here --> */}
-                        <li><NavLink to='myOrders'>My Orders</NavLink></li>
-                        <li><NavLink to='addReview'>Add Review</NavLink></li>
+                        {/* User Route */}
+
+                        {
+                            !admin && <li><NavLink to='myOrders'>My Orders</NavLink></li>
+                        }
+                        {
+                            !admin && <li><NavLink to='addReview'>Add Review</NavLink></li>
+                        }
+
+
+
+                        {/* Commoun Route */}
                         <li><NavLink to='myProfile'>My Profile</NavLink></li>
 
-                        {/* for admin */}
-                        <li><NavLink to='manageOrders'>Manage Orders</NavLink></li>
-                        <li><NavLink to='addProduct'>Add Product</NavLink></li>
-                        <li><NavLink to='manageProducts'>Manage Products</NavLink></li>
-                        <li><NavLink to='makeAdmin'>Make Admin</NavLink></li>
+
+
+
+                        {/* Admin Route */}
+
+                        {
+                            admin && <li><NavLink to='manageOrders'>Manage Orders</NavLink></li>
+                        }
+                        {
+                            admin && <li><NavLink to='addProduct'>Add Product</NavLink></li>
+                        }
+                        {
+                            admin && <li><NavLink to='manageProducts'>Manage Products</NavLink></li>
+                        }
+                        {
+                            admin && <li><NavLink to='makeAdmin'>Make Admin</NavLink></li>
+                        }
+
                     </ul>
 
                 </div>

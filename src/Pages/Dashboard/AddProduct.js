@@ -8,28 +8,8 @@ import auth from '../../Firebase/Firebase.init';
 const AddProduct = () => {
 
 
-
-
-
-
-
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [user] = useAuthState(auth)
-
-
-    // useEffect(() => {
-    //     if (user) {
-    //         navigate(from, { replace: true });
-    //     }
-    // }, [user])
-
-
-
-
-    // if (gLoading || loading) {
-    //     return <Loading></Loading>
-    // }
-
 
 
 

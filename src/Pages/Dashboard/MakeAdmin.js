@@ -5,7 +5,12 @@ import AdminRow from './AdminRow';
 
 const MakeAdmin = () => {
 
-    const { data: users, isLoading } = useQuery('user', () => fetch('http://localhost:5000/users').then(res => res.json()))
+    const { data: users, isLoading, refetch } = useQuery('user', () => fetch('http://localhost:5000/users', {
+        method: 'GET',
+        headers: {
+            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    }).then(res => res.json()))
 
 
     if (isLoading) {
@@ -13,21 +18,22 @@ const MakeAdmin = () => {
     }
 
 
+    console.log(users);
+
     return (
         <div className="w-full ">
             <table className="table w-full">
                 {/* <!-- head --> */}
                 <thead >
                     <tr>
-                        <th className='pl-10'>Name</th>
-                        <th>Price</th>
-                        <th>Status</th>
-                        <th className='pl-7'>Cancle</th>
+                        <th className='pl-10'>Count</th>
+                        <th>Email</th>
+                        <th className='pl-20'>Role</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
-                        users.map(user => <AdminRow key={user._id} user={user}></AdminRow>)
+                        users.map((user, index) => <AdminRow key={user._id} index={index} user={user} refetch={refetch}></AdminRow>)
                     }
                 </tbody>
 
