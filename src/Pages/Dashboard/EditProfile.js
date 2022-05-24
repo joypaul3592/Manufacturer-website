@@ -30,19 +30,18 @@ const EditProfile = () => {
         console.log(userInfo);
 
         try {
-            const { data } = await axios.post(`http://localhost:5000/userInfo/${email}`, userInfo, {
+            const { data } = await axios.put(`http://localhost:5000/userInfo/${email}`, userInfo, {
                 method: 'PUT',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 }
             });
 
-
             if (!data.success) {
                 return toast.error(data.error)
             }
             console.log(data);
-            toast.success(data.message);
+            toast.success('SuccessFully Updated');
             reset()
 
         } catch (error) {
