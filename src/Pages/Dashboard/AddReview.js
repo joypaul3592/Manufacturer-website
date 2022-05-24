@@ -18,17 +18,21 @@ const AddReview = () => {
 
         const reviewText = data.review;
         console.log(reviewText);
-        const review = { review: reviewText }
+        const review = {
+            review: reviewText,
+            image: user?.photoURL,
+        }
         console.log(review);
 
         try {
 
-            const { data } = await axios.post(`http://localhost:5000/review`, {
-                method: 'POST',
-                headers: {
-                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-                }
-            });
+            const { data } = await axios.post(`http://localhost:5000/review`, review,
+                {
+                    method: 'POST',
+                    headers: {
+                        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                    }
+                });
 
             if (!data.success) {
                 return toast.error(data.error)
@@ -42,6 +46,15 @@ const AddReview = () => {
         }
 
     };
+
+
+
+
+
+
+
+
+
 
 
 

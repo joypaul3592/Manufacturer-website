@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { toast } from 'react-toastify';
+import ReviewRow from './ReviewRow';
 
 const Review = () => {
 
@@ -20,7 +20,7 @@ const Review = () => {
                 console.log(data.data);
                 setReviews(data.data)
             })
-    }, [reviews])
+    }, [])
 
 
 
@@ -35,19 +35,9 @@ const Review = () => {
 
 
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
-                <div className="card  bg-base-100 shadow-2xl">
-                    <div className="card-body">
-                        <div className="card-actions justify-center">
-                            <div className="avatar">
-                                <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                    <img src="https://api.lorem.space/image/face?hash=3174" />
-                                </div>
-                            </div>
-                        </div>
-                        <p> <span className='text-2xl font-mono text-primary'>"</span>{reviews.length} <span className='text-2xl font-mono text-primary'>"</span></p>
-                    </div>
-                </div>
-
+                {
+                    reviews?.map(review => <ReviewRow key={review._id} review={review}></ReviewRow>)
+                }
             </div>
         </div>
     );
