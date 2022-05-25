@@ -56,7 +56,7 @@ const MyOdersRow = ({ product, setReload }) => {
                 <h1 className=' font-semibold text-green-800'>${totalPrice}</h1>
             </td>
             <td>
-                {product.paid ? <p>Paid</p> : <Link to={`/dashboard/payment/${product._id}`}><button className='py-1 px-4 bg-green-800 text-white rounded'>Pay</button></Link>}
+                {product.paid ? <p className=' text-xl text-green-800 font-semibold ml-2'>Paid</p> : <Link to={`/dashboard/payment/${product._id}`}><button className='py-1 px-4 bg-green-800 text-white rounded'>Pay</button></Link>}
             </td>
             <td>
                 <button onClick={() => deleteItems(product._id, product.name)} className='py-1 px-4 bg-red-800 text-white rounded'>Cancle</button>
