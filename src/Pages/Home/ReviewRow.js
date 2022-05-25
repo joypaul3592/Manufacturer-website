@@ -1,6 +1,10 @@
 import React from 'react';
 
 const ReviewRow = ({ review }) => {
+
+    console.log(review)
+    const reviewText = review.review.slice(0, 170)
+
     return (
         <div className="card  bg-base-100 shadow-2xl">
             <div className="card-body">
@@ -11,7 +15,17 @@ const ReviewRow = ({ review }) => {
                         </div>
                     </div>
                 </div>
-                <p> <span className='text-2xl font-mono text-primary'>"</span>{review.review}  <span className='text-2xl font-mono text-primary'>"</span></p>
+                <p> <span className='text-2xl font-mono text-primary'>"</span>{reviewText}  <span className='text-2xl font-mono text-primary'>"</span></p>
+                <div className="flex items-center justify-between w-full ">
+                    <div class="rating rating-sm">
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                    </div>
+                    <p className=' text-right'>{review.name}</p>
+                </div>
             </div>
         </div>
     );

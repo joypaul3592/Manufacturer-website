@@ -28,7 +28,7 @@ function Contact() {
 
 
     return (
-        <div className="w-full my-36 px-8" >
+        <div className="w-full mb-20 px-8" >
             <div className=" max-w-7xl mx-auto py-24 rounded-lg">
                 <div className="w-full flex items-center justify-center my-12 ">
                     <div className=" w-full bg-white backdrop-blur-lg bg-opacity-10 shadow-lg rounded py-12 lg:px-28 px-8">

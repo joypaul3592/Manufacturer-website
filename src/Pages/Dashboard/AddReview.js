@@ -21,6 +21,7 @@ const AddReview = () => {
         const review = {
             review: reviewText,
             image: user?.photoURL,
+            name: user?.displayName,
         }
         console.log(review);
 

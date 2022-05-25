@@ -88,15 +88,15 @@ const ProductDetail = () => {
                             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                         }
                     });
+
                     console.log(updateData);
                     if (!data.success) {
                         return toast.error(data.error)
                     }
-                    console.log(data);
 
                     toast.success(data.message);
                     reset()
-                    navigate(`/confirmProduct/${id}`)
+                    navigate(`/dashboard/myOrders`)
                 } catch (error) {
                     toast.error(error.message)
                 };
