@@ -30,17 +30,19 @@ const DashboardSideBare = ({ children }) => {
                     <ul className="menu p-4 bg-base-100  overflow-y-auto w-80 text-base-content shadow-xl border-r-2">
                         {/* User Route */}
 
+
+                        {/* Commoun Route */}
+                        <li><NavLink to='myProfile'>My Profile</NavLink></li>
+
+
+
+
                         {
                             !admin && <li><NavLink to='myOrders'>My Orders</NavLink></li>
                         }
                         {
                             !admin && <li><NavLink to='addReview'>Add Review</NavLink></li>
                         }
-
-
-
-                        {/* Commoun Route */}
-                        <li><NavLink to='myProfile'>My Profile</NavLink></li>
 
 
 

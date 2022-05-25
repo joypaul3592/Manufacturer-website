@@ -19,7 +19,7 @@ const MyOrders = () => {
     useEffect(() => {
         const getProducts = async () => {
 
-            fetch(`http://localhost:5000/userProduct?email=${email}`, {
+            fetch(`http://localhost:5000/userProduct/${email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -34,6 +34,9 @@ const MyOrders = () => {
                     return res.json()
                 })
                 .then(data => {
+
+
+                    console.log(data);
                     if (!data?.success) return toast.error(data?.error);
                     setUserProducts(data?.data);
                 })
@@ -41,6 +44,10 @@ const MyOrders = () => {
         getProducts()
 
     }, [user])
+
+    console.log(userProducts);
+
+
 
 
 
@@ -59,7 +66,7 @@ const MyOrders = () => {
                 </thead>
                 <tbody>
                     {
-                        userProducts.map(product => <MyOdersRow key={product._id} product={product}></MyOdersRow>)
+                        userProducts.length === 0 ? <p className='text-xl text-green-800 font-semibold text-center mt-5'>Please Order Product</p> : userProducts.map(product => <MyOdersRow key={product._id} product={product}></MyOdersRow>)
                     }
                 </tbody>
 

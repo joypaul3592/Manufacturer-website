@@ -1,24 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../../Sheard/Loading';
 import AdminRow from './AdminRow';
 
 const MakeAdmin = () => {
 
-    const { data: users, isLoading, refetch } = useQuery('user', () => fetch('http://localhost:5000/users', {
-        method: 'GET',
-        headers: {
-            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-        }
-    }).then(res => res.json()))
+    const [users, setUsers] = useState([])
 
 
-    if (isLoading) {
-        return <Loading></Loading>
-    }
+    useEffect(() => {
+        fetch('http://localhost:5000/users', {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        }).then(res => res.json())
+            .then(data => {
+                setUsers(data)
+            })
+    }, [users])
 
 
-    console.log(users);
+
 
     return (
         <div className="w-full ">
@@ -33,7 +36,7 @@ const MakeAdmin = () => {
                 </thead>
                 <tbody>
                     {
-                        users.map((user, index) => <AdminRow key={user._id} index={index} user={user} refetch={refetch}></AdminRow>)
+                        users?.map((user, index) => <AdminRow key={user._id} index={index} user={user} ></AdminRow>)
                     }
                 </tbody>
 

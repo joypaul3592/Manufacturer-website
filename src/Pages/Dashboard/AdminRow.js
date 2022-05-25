@@ -2,7 +2,7 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 
-const AdminRow = ({ user, index, refetch }) => {
+const AdminRow = ({ user, index }) => {
 
     const { email, role } = user;
     console.log(email);
@@ -23,7 +23,7 @@ const AdminRow = ({ user, index, refetch }) => {
             .then(data => {
                 if (data.modifiedCount > 0) {
                     toast.success('Successfully Made Admin');
-                    refetch()
+
                 }
             })
     }

@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const MyOdersRow = ({ product }) => {
 
 
-
+    console.log(product);
 
 
     const [deletes, setDeletes] = useState(false)
@@ -12,11 +12,11 @@ const MyOdersRow = ({ product }) => {
 
     useEffect(() => {
         console.log('kaj hocce');
-    }, [deletes])
+    }, [deletes, product])
 
 
     const deleteItems = (id, name) => {
-        const deleteItems = window.confirm(`Want To Delete ${name} ?`)
+        const deleteItems = window.confirm(`Want To Cancle ${name} ?`)
         if (deleteItems) {
 
             fetch(`http://localhost:5000/userProduct/${id}`, {
@@ -26,7 +26,7 @@ const MyOdersRow = ({ product }) => {
                 .then(data => {
                     if (data) {
                         setDeletes(!true)
-                        toast.success(`Successfully Delete ${name}`)
+                        toast.success(`Successfully Cancle ${name}`)
                     }
                 })
         }
@@ -58,10 +58,10 @@ const MyOdersRow = ({ product }) => {
                 </div>
             </td>
             <td>
-                <h1 className=' font-semibold'>{product.price}</h1>
+                <h1 className=' font-semibold text-green-800'>${product.price}</h1>
             </td>
             <td>
-                <button className='py-1 px-4 bg-slate-800 text-white rounded'>Pay</button>
+                <button className='py-1 px-4 bg-green-800 text-white rounded'>Pay</button>
             </td>
             <td>
                 <button onClick={() => deleteItems(product._id, product.name)} className='py-1 px-4 bg-red-800 text-white rounded'>Cancle</button>

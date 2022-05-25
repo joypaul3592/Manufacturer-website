@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../../Sheard/Loading';
+import OrdersRow from './OrdersRow';
 import ProductsRow from './ProductsRow';
 
 const ManageOrders = () => {
@@ -21,7 +22,6 @@ const ManageOrders = () => {
     return (
         <div className="w-full ">
             <table className="table w-full">
-                {/* <!-- head --> */}
                 <thead >
                     <tr>
                         <th className='pl-10'>Image</th>
@@ -32,7 +32,7 @@ const ManageOrders = () => {
                 </thead>
                 <tbody>
                     {
-                        products.map(product => <ProductsRow key={product._id} product={product}></ProductsRow>)
+                        products?.map(product => <OrdersRow key={product._id} product={product}></OrdersRow>)
                     }
                 </tbody>
 
