@@ -16,35 +16,6 @@ const MyOrders = () => {
 
 
 
-
-
-
-    // const { data: userProducts, isLoading, refetch } = useQuery('user', () => fetch(`http://localhost:5000/userProduct/${email}`, {
-    //     method: 'GET',
-    //     headers: {
-    //         'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-    //     }
-    // }).then(res => {
-    //     if (res.status === 401 || res.status === 403) {
-    //         signOut(auth)
-    //         localStorage.removeItem('accessToken');
-    //         navigate('/')
-    //     }
-    //     return res.json()
-    // })
-    //     .then(data => {
-    //         console.log(data);
-    //         if (!data?.success) return toast.error(data?.error);
-    //     }));
-
-    // if (isLoading) {
-    //     return <Loading></Loading>
-    // }
-
-
-
-
-
     useEffect(() => {
         const getProducts = async () => {
 

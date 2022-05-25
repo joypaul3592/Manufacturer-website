@@ -11,7 +11,7 @@ const ProductsRow = ({ product }) => {
 
 
     useEffect(() => {
-        console.log('kaj hocce');
+        console.log('k');
     }, [deletes])
 
 

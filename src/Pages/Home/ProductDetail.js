@@ -3,7 +3,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../Firebase/Firebase.init';
 import Loading from '../../Sheard/Loading';
@@ -13,6 +13,8 @@ const ProductDetail = () => {
     const [product, setProduct] = useState({})
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [user] = useAuthState(auth)
+    const navigate = useNavigate()
+
 
     // Load data form DB
     useEffect(() => {
@@ -32,13 +34,7 @@ const ProductDetail = () => {
 
 
 
-    // Post data 
-
-
-
-
-
-
+    // Post data
 
     const onSubmit = async (data) => {
         console.log(data)
@@ -100,7 +96,7 @@ const ProductDetail = () => {
 
                     toast.success(data.message);
                     reset()
-
+                    navigate(`/confirmProduct/${id}`)
                 } catch (error) {
                     toast.error(error.message)
                 };

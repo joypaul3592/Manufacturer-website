@@ -1,28 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 
-const OrdersRow = ({ product }) => {
+const OrdersRow = ({ product, refetch }) => {
 
-
-    const [deletes, setDeletes] = useState(false)
-
-
-    useEffect(() => {
-        console.log('kaj hocce');
-    }, [deletes])
 
 
     const deleteItems = (id, name) => {
         const deleteItems = window.confirm(`Want To Delete ${name} ?`)
         if (deleteItems) {
 
-            fetch(`http://localhost:5000/userProduct/${id}`, {
+            fetch(`http://localhost:5000/userOrder/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())
                 .then(data => {
                     if (data) {
-                        setDeletes(!true)
+                        console.log(data);
+                        refetch()
                         toast.success(`Successfully Delete ${name}`)
                     }
                 })
@@ -32,6 +26,8 @@ const OrdersRow = ({ product }) => {
         }
 
     }
+
+
 
 
     return (
@@ -53,7 +49,7 @@ const OrdersRow = ({ product }) => {
             </td>
 
             <td>
-                <button onClick={() => deleteItems(product._id, product.name)} className='py-1 px-4 bg-green-800 text-white rounded'>Paid</button>
+                <button onClick={() => deleteItems(product._id, product.name)} className='py-1 px-4 bg-green-800 text-white rounded'>Delete</button>
 
             </td>
 

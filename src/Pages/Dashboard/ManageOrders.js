@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../../Sheard/Loading';
 import OrdersRow from './OrdersRow';
 import ProductsRow from './ProductsRow';
 
 const ManageOrders = () => {
+    const [reload, setReload] = useState(false)
 
     const { data: productsData, isLoading, refetch } = useQuery('user', () => fetch('http://localhost:5000/orders', {
         method: 'GET',
@@ -32,7 +33,7 @@ const ManageOrders = () => {
                 </thead>
                 <tbody>
                     {
-                        products?.map(product => <OrdersRow key={product._id} product={product}></OrdersRow>)
+                        products?.map(product => <OrdersRow key={product._id} product={product} refetch={refetch} setReload={setReload}></OrdersRow>)
                     }
                 </tbody>
 
