@@ -53,7 +53,9 @@ const MyOrders = () => {
                 <thead >
                     <tr>
                         <th className='pl-10'>Name</th>
-                        <th>Price</th>
+                        <th>Price/pes</th>
+                        <th>Order Quantity</th>
+                        <th>Total price</th>
                         <th>Status</th>
                         <th className='pl-7'>Cancle</th>
                     </tr>

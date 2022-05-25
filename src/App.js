@@ -13,6 +13,7 @@ import ManageOrders from './Pages/Dashboard/ManageOrders';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import Home from './Pages/Home/Home';
+import Payment from './Pages/Home/Payment';
 import ProductDetail from './Pages/Home/ProductDetail';
 import MyProfile from './Pages/MyProfile/MyProfile';
 import Login from './Pages/UserLogin/Login';
@@ -39,7 +40,7 @@ function App() {
 
         {/* Privet Route */}
         <Route path='dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
-
+          <Route path='payment/:id' element={<RequireAuth><Payment></Payment></RequireAuth>}></Route>
           <Route path='myOrders' element={<RequireAuth><MyOrders></MyOrders></RequireAuth>}></Route>
           <Route path='addReview' element={<RequireAuth><AddReview></AddReview></RequireAuth>}></Route>
           <Route path='myProfile' element={<RequireAuth><DasMyProfiles></DasMyProfiles></RequireAuth>}></Route>

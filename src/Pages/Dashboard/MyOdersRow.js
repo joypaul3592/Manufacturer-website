@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const MyOdersRow = ({ product, setReload }) => {
@@ -32,30 +33,30 @@ const MyOdersRow = ({ product, setReload }) => {
     }
 
 
-
-
+    console.log(product.price, product.quantity)
+    const totalPrice = (parseInt(product.price) * parseInt(product.quantity))
 
 
     return (
         <tr>
-            <td>
-                <div className="flex items-center space-x-3">
-                    <div className="avatar">
-                        <div className="mask rounded w-12 h-12 ">
-                            <img src={product.image} alt="Avatar Tailwind CSS Component" />
-                        </div>
-                    </div>
-                    <div>
-                        <div className="font-bold">{product.name}</div>
-
+            <td className='pl-9'>
+                <div class="avatar">
+                    <div class="mask mask-squircle w-12 h-12">
+                        <img src={product.image} alt="Avatar Tailwind CSS Component" />
                     </div>
                 </div>
             </td>
             <td>
                 <h1 className=' font-semibold text-green-800'>${product.price}</h1>
             </td>
+            <td className='pl-12'>
+                <h1 className=' font-semibold text-gray-800'>{product.quantity}</h1>
+            </td>
+            <td className='pl-8'>
+                <h1 className=' font-semibold text-green-800'>${totalPrice}</h1>
+            </td>
             <td>
-                <button className='py-1 px-4 bg-green-800 text-white rounded'>Pay</button>
+                {product.paid ? <p>Paid</p> : <Link to={`/dashboard/payment/${product._id}`}><button className='py-1 px-4 bg-green-800 text-white rounded'>Pay</button></Link>}
             </td>
             <td>
                 <button onClick={() => deleteItems(product._id, product.name)} className='py-1 px-4 bg-red-800 text-white rounded'>Cancle</button>
