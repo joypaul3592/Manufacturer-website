@@ -19,7 +19,7 @@ const MyOdersRow = ({ product }) => {
         const deleteItems = window.confirm(`Want To Cancle ${name} ?`)
         if (deleteItems) {
 
-            fetch(`http://localhost:5000/userProduct/${id}`, {
+            fetch(`http://localhost:5000/userOrder/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())
