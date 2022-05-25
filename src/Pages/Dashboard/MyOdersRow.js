@@ -1,18 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 
-const MyOdersRow = ({ product }) => {
+const MyOdersRow = ({ product, setReload }) => {
 
 
     console.log(product);
 
 
-    const [deletes, setDeletes] = useState(false)
 
-
-    useEffect(() => {
-        console.log('kaj hocce');
-    }, [deletes, product])
 
 
     const deleteItems = (id, name) => {
@@ -25,8 +20,8 @@ const MyOdersRow = ({ product }) => {
                 .then(res => res.json())
                 .then(data => {
                     if (data) {
-                        setDeletes(!true)
-                        toast.success(`Successfully Cancle ${name}`)
+                        setReload(true)
+                        toast.success(`Successfully Cancle ${name}`);
                     }
                 })
         }
@@ -35,7 +30,6 @@ const MyOdersRow = ({ product }) => {
         }
 
     }
-
 
 
 

@@ -14,8 +14,6 @@ const ProductDetail = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [user] = useAuthState(auth)
 
-
-
     // Load data form DB
     useEffect(() => {
 
@@ -27,12 +25,10 @@ const ProductDetail = () => {
                 }
             });
             if (!data?.success) return toast.error(data?.error);
-            console.log(data)
-            console.log(data.data)
             setProduct(data?.data);
         }
         fetchData()
-    }, [])
+    }, [product])
 
 
 
@@ -53,9 +49,10 @@ const ProductDetail = () => {
         const quantity = parseInt(data.quantity);
         console.log(quantity);
 
-
         const miniQuantity = parseInt(product.miniQuantity);
         console.log(miniQuantity);
+
+        const id = product._id;
 
 
         if (quantity < productStock) {
@@ -76,6 +73,10 @@ const ProductDetail = () => {
                     address: data.address,
                     phone: data.phone,
                 }
+                const currentQuantity = (parseInt(product.stock) - parseInt(data.quantity))
+                const stock = {
+                    stock: currentQuantity
+                }
 
                 try {
                     const { data } = await axios.post(`http://localhost:5000/orders`, productDetail, {
@@ -85,11 +86,18 @@ const ProductDetail = () => {
                         }
                     });
 
-
+                    const { updateData } = await axios.put(`http://localhost:5000/updateProduct/${id}`, stock, {
+                        method: 'PUT',
+                        headers: {
+                            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                        }
+                    });
+                    console.log(updateData);
                     if (!data.success) {
                         return toast.error(data.error)
                     }
                     console.log(data);
+
                     toast.success(data.message);
                     reset()
 
@@ -116,7 +124,6 @@ const ProductDetail = () => {
 
 
     };
-
 
 
     if (!product) {
@@ -244,7 +251,6 @@ const ProductDetail = () => {
                                     }
                                 </label>
                             </div>
-
 
 
                             <div className='text-center'>

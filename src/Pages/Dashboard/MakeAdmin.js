@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useQuery } from 'react-query';
-import Loading from '../../Sheard/Loading';
 import AdminRow from './AdminRow';
 
 const MakeAdmin = () => {
