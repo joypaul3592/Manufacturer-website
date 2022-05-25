@@ -10,7 +10,12 @@ function useProduct() {
     useEffect(() => {
 
         const fetchData = async () => {
-            const { data } = await axios.get(`http://localhost:5000/product`);
+            const { data } = await axios.get(`http://localhost:5000/product`, {
+                method: 'GET',
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            });
             if (!data?.success) return toast.error(data?.error);
             setProducts(data?.data);
         }
