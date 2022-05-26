@@ -51,18 +51,11 @@ const AddReview = () => {
 
 
 
-
-
-
-
-
-
-
-
     return (
         <div className='w-full'>
-            <h1 className=' text-3xl font-semibold text-primary text-center '>Add Review</h1>
-            <hr className='h-[1px] w-5/12 border-green-500 mt-3 mb-36 mx-auto' />
+            <h1 className=' text-3xl font-semibold text-primary ml-7 uppercase'>Add Review</h1>
+            <hr className='h-[1px] w-5/12 mb-28 border-green-500 mt-3  ml-7' />
+
             <div className='w-10/12  relative mx-auto'>
                 <form onSubmit={handleSubmit(onSubmit)} className='w-10/12 mx-auto'>
 

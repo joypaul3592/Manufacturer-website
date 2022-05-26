@@ -55,7 +55,7 @@ const EditProfile = () => {
 
     return (
 
-        <div>
+        <div >
             <form onSubmit={handleSubmit(onSubmit)}>
                 <h1 className=' text-xl font-bold text-primary'>Update Profile</h1>
                 <hr className='  border-green-600 w-6/12 mb-5' />

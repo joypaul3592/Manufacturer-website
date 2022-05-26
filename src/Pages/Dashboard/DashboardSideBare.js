@@ -11,7 +11,7 @@ const DashboardSideBare = ({ children }) => {
 
 
     return (
-        <div className=' max-w-7xl mx-auto px-8 py-10  mb-40'>
+        <div className=' max-w-7xl mx-auto px-8 py-10  '>
 
             <h1 className=' text-4xl text-center text-slate-700 font-bold' >DashBoard</h1>
             <label for="my-drawer-2" tabindex="0" className="btn btn-ghost btn-circle lg:hidden">

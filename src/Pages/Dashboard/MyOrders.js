@@ -49,7 +49,9 @@ const MyOrders = () => {
 
     return (
         <div className="w-full ">
-            <table className="table w-full">
+            <h1 className=' text-3xl font-semibold text-primary ml-7 uppercase'>My Orders</h1>
+            <hr className='h-[1px] w-5/12 border-green-500 mt-3  ml-7' />
+            <table className="table w-full mt-12 ">
                 <thead >
                     <tr>
                         <th className='pl-10'>Name</th>
