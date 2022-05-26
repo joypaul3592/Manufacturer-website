@@ -57,7 +57,7 @@ const AddReview = () => {
             <hr className='h-[1px] w-5/12 mb-28 border-green-500 mt-3  ml-7' />
 
             <div className='w-10/12  relative mx-auto'>
-                <form onSubmit={handleSubmit(onSubmit)} className='w-10/12 mx-auto'>
+                <form onSubmit={handleSubmit(onSubmit)} className='md:w-10/12 w-full mx-auto'>
 
                     <div className="form-control w-full ">
                         <textarea
@@ -78,8 +78,8 @@ const AddReview = () => {
                         </label>
                     </div>
 
-                    <div className="avatar absolute top-[-25%] left-[45%]">
-                        <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                    <div className="avatar absolute md:top-[-25%] top-[-12%] lg:left-[45%] left-[42%]">
+                        <div className="md:w-24 w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                             <img src={user?.photoURL} />
                         </div>
                     </div>

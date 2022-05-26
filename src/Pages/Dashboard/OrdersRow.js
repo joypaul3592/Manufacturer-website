@@ -70,12 +70,12 @@ const OrdersRow = ({ product, refetch }) => {
             <td>
                 <div className="font-bold">{product.name}</div>
             </td>
-            <td>
+            <td className='pl-10'>
                 <h1 className=' font-semibold text-green-800'>${totalPrice}</h1>
             </td>
 
             <td>
-                {product.paid ? <button onClick={() => handelPanding(product._id)} className='py-1 px-4 bg-green-800 text-white rounded'>{product.status ? 'Shipped ' : 'Pending'}</button> : <button className='py-1 px-4 bg-gray-900 text-white rounded'>Unpaid</button>}
+                {product.paid ? <button onClick={() => handelPanding(product._id)} >{product.status ? <p className=' text-xl font-semibold font-mono text-green-800'>Shipped</p> : <button className='py-1 px-4 bg-purple-900 text-white rounded'>Panding</button>}</button> : <button className='py-1 px-4 bg-gray-900 text-white rounded'>Unpaid</button>}
 
             </td>
             <td>

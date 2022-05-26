@@ -26,9 +26,9 @@ const ManageOrders = () => {
                 <thead >
                     <tr>
                         <th className='pl-10'>Image</th>
-                        <th>Name</th>
+                        <th className='pl-16'>Name</th>
                         <th>Total Amount</th>
-                        <th>Paid</th>
+                        <th className='pl-9'>Paid</th>
                         <th className='pl-7'>Status</th>
                     </tr>
                 </thead>

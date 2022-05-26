@@ -61,7 +61,7 @@ const EditProfile = () => {
                 <hr className='  border-green-600 w-6/12 mb-5' />
 
 
-                <div className="grid grid-cols-2 gap-5">
+                <div className="grid md:grid-cols-2 grid-cols-1 md:gap-5">
                     <div className="form-control w-full ">
                         <label className="label">
                             <span className="label-text">Education </span>

@@ -57,7 +57,7 @@ const AddProduct = () => {
 
             <div className="card-body flex w-full  ">
 
-                <form onSubmit={handleSubmit(onSubmit)} className='w-10/12 mx-auto'>
+                <form onSubmit={handleSubmit(onSubmit)} className='md:w-10/12 w-full mx-auto'>
 
                     <div className="form-control w-full ">
                         <label className="label">

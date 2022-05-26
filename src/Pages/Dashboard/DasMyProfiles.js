@@ -31,7 +31,7 @@ const DasMyProfiles = () => {
                 {edit && <div className="py-10 ">
                     <div>
                         <label className="drawer-overlay"></label>
-                        <ul className="menu p-4 px-16 mx-auto overflow-y-auto w-full  mr-20 text-base-content bg-white">
+                        <ul className="menu p-4 px-5 md:px-16 mx-auto overflow-y-auto w-full  mr-20 text-base-content bg-white">
 
                             <EditProfile></EditProfile>
                         </ul>
