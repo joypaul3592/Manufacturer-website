@@ -107,14 +107,18 @@ const Navbar = () => {
                                                         leaveTo="transform opacity-0 scale-95"
                                                     >
                                                         <Menu.Items className="origin-top-right pl-8 absolute right-0 mt-2 w-48 rounded-md shadow-lg py-5 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                                            <h1 className='text-green-800 text-sm font-semibold font-mono ml-4'>{user?.displayName}</h1>
+                                                            <hr className='mr-8 mb-4' />
                                                             <NavLink
-                                                                to={'/dashboard'}
-                                                                className={({ isActive }) => (`block mb-3  text-base font-semibold ${isActive ? 'text-blue-500' : 'text-black'}`)}>Dashboard</NavLink>
+                                                                to={'/myProfile'}
+                                                                className={({ isActive }) => (`block mt-3  text-base font-semibold ${isActive ? 'text-blue-500' : 'text-black'}`)}>
+                                                                My Profile
+                                                            </NavLink>
 
                                                             <NavLink
                                                                 to={'/'}
                                                                 onClick={userSignOut}
-                                                                className={({ isActive }) => (`block mt3  text-base font-semibold ${isActive ? 'text-blue-500' : 'text-black'}`)}>
+                                                                className={({ isActive }) => (`block mt-3  text-base font-semibold ${isActive ? 'text-blue-500' : 'text-black'}`)}>
                                                                 LogOut
                                                             </NavLink>
 

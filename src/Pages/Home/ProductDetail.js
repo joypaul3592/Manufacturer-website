@@ -235,7 +235,7 @@ const ProductDetail = () => {
                                 </label>
                                 <input
                                     type="number"
-                                    placeholder="Your Product Quantity"
+                                    placeholder={product.miniQuantity}
                                     className="input input-bordered w-full "
                                     {...register("quantity", {
                                         required: {

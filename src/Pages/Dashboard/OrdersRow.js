@@ -75,7 +75,7 @@ const OrdersRow = ({ product, refetch }) => {
             </td>
 
             <td>
-                {product.paid ? <button onClick={() => handelPanding(product._id)} >{product.status ? <p className=' text-xl font-semibold font-mono text-green-800'>Shipped</p> : <button className='py-1 px-4 bg-purple-900 text-white rounded'>Panding</button>}</button> : <button className='py-1 px-4 bg-gray-900 text-white rounded'>Unpaid</button>}
+                {product.paid ? <button onClick={() => handelPanding(product._id)} >{product.status ? <p className=' text-xl font-semibold font-mono text-green-800'>Shipped</p> : <button className='py-1 px-4 bg-purple-900 text-white rounded'>Panding</button>}</button> : <h1 className=' text-gray-900 font-bold ml-4 rounded'>Unpaid</h1>}
 
             </td>
             <td>
