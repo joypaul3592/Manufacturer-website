@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/Firebase.init';
 import EditProfile from '../Dashboard/EditProfile';
@@ -10,20 +10,7 @@ const MyProfile = () => {
     const [edit, setEdit] = useState(false);
 
 
-    const email = user?.email;
-    const [userInfo, setUserInfo] = useState({});
 
-    useEffect(() => {
-        fetch(`http://localhost:5000/upUserInfo/${email}`)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data.data);
-                setUserInfo(data.data)
-            })
-    }, [userInfo])
-
-
-    console.log(userInfo);
 
 
     return (
