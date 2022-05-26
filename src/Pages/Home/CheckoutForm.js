@@ -1,6 +1,7 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import Loading from '../../Sheard/Loading';
 
 const CheckoutForm = ({ product }) => {
 
@@ -108,14 +109,10 @@ const CheckoutForm = ({ product }) => {
                 setProcessing(false)
                 console.log(data)
             })
-
-
-
-
-
         }
-
     }
+
+
 
 
     return (

@@ -33,7 +33,9 @@ const ProductDetail = () => {
     }, [product])
 
 
-
+    if (!product) {
+        return <Loading></Loading>
+    }
     // Post data
 
     const onSubmit = async (data) => {
