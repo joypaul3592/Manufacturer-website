@@ -19,7 +19,7 @@ const MyOrders = () => {
     useEffect(() => {
         const getProducts = async () => {
 
-            fetch(`http://localhost:5000/userProduct/${email}`, {
+            fetch(`https://vast-headland-56370.herokuapp.com/userProduct/${email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

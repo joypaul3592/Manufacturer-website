@@ -15,7 +15,7 @@ const MyOdersRow = ({ product, setReload }) => {
         const deleteItems = window.confirm(`Want To Cancle ${name} ?`)
         if (deleteItems) {
 
-            fetch(`http://localhost:5000/userOrder/${id}`, {
+            fetch(`https://vast-headland-56370.herokuapp.com/userOrder/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())

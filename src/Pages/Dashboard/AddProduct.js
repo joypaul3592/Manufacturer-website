@@ -27,7 +27,7 @@ const AddProduct = () => {
         }
         console.log(product);
         try {
-            const { data } = await axios.post(`http://localhost:5000/product`, product, {
+            const { data } = await axios.post(`https://vast-headland-56370.herokuapp.com/product`, product, {
                 method: 'POST',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

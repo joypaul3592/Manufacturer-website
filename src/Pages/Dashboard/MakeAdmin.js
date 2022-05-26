@@ -7,7 +7,7 @@ const MakeAdmin = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/users', {
+        fetch('https://vast-headland-56370.herokuapp.com/users', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

@@ -7,7 +7,7 @@ import ProductsRow from './ProductsRow';
 const ManageOrders = () => {
     const [reload, setReload] = useState(false)
 
-    const { data: productsData, isLoading, refetch } = useQuery('user', () => fetch('http://localhost:5000/orders', {
+    const { data: productsData, isLoading, refetch } = useQuery('user', () => fetch('https://vast-headland-56370.herokuapp.com/orders', {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

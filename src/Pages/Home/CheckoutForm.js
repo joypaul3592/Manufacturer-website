@@ -19,7 +19,7 @@ const CheckoutForm = ({ product }) => {
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://vast-headland-56370.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -96,7 +96,7 @@ const CheckoutForm = ({ product }) => {
 
 
             // update db
-            fetch(`http://localhost:5000/upOrder/${id}`, {
+            fetch(`https://vast-headland-56370.herokuapp.com/upOrder/${id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

@@ -19,7 +19,7 @@ const ProductsRow = ({ product }) => {
         const deleteItems = window.confirm(`Want To Delete ${name} ?`)
         if (deleteItems) {
 
-            fetch(`http://localhost:5000/userProduct/${id}`, {
+            fetch(`https://vast-headland-56370.herokuapp.com/userProduct/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())

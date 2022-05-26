@@ -20,7 +20,7 @@ const ProductDetail = () => {
     useEffect(() => {
 
         const fetchData = async () => {
-            const { data } = await axios.get(`http://localhost:5000/productDtails/${id}`, {
+            const { data } = await axios.get(`https://vast-headland-56370.herokuapp.com/productDtails/${id}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -75,14 +75,14 @@ const ProductDetail = () => {
                 }
 
                 try {
-                    const { data } = await axios.post(`http://localhost:5000/orders`, productDetail, {
+                    const { data } = await axios.post(`https://vast-headland-56370.herokuapp.com/orders`, productDetail, {
                         method: 'POST',
                         headers: {
                             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                         }
                     });
 
-                    const { updateData } = await axios.put(`http://localhost:5000/updateProduct/${id}`, stock, {
+                    const { updateData } = await axios.put(`https://vast-headland-56370.herokuapp.com/updateProduct/${id}`, stock, {
                         method: 'PUT',
                         headers: {
                             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
