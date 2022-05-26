@@ -15,13 +15,17 @@ const AddReview = () => {
 
 
     const onSubmit = async (data) => {
-
+        const ratting = data.ratting;
+        if (parseInt(ratting) > 6) {
+            return toast.error('Ratting Must be Under 5')
+        }
         const reviewText = data.review;
         console.log(reviewText);
         const review = {
             review: reviewText,
             image: user?.photoURL,
             name: user?.displayName,
+            ratting: ratting,
         }
         console.log(review);
 
@@ -78,11 +82,33 @@ const AddReview = () => {
                         </label>
                     </div>
 
-                    <div className="avatar absolute md:top-[-25%] top-[-12%] lg:left-[45%] left-[42%]">
+                    <div className="avatar absolute md:top-[-20%] top-[-12%] lg:left-[45%] left-[42%]">
                         <div className="md:w-24 w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                             <img src={user?.photoURL} />
                         </div>
                     </div>
+
+                    <div className="form-control w-full ">
+                        <input
+                            type="number"
+                            placeholder="Your Ratting"
+                            className="input input-bordered w-full"
+                            {...register("ratting", {
+                                required: {
+                                    value: true,
+                                    message: 'Ratting is required'
+                                }
+
+                            })}
+                        />
+                        <label className="label">
+                            {errors.ratting?.type === 'required' && <span className="label-text-alt text-red-500">{errors?.ratting?.message}</span>
+                            }
+
+                        </label>
+                    </div>
+
+
                     <div className=' text-center'> <input type='submit' value='submit' className='py-1 mt-4 px-5 bg-green-800 text-white rounded' /></div>
                 </form>
 
