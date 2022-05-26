@@ -18,6 +18,7 @@ import ProductDetail from './Pages/Home/ProductDetail';
 import MyProfile from './Pages/MyProfile/MyProfile';
 import Login from './Pages/UserLogin/Login';
 import SignUp from './Pages/UserLogin/SignUp';
+import Footer from './Sheard/Footer';
 import Navbar from './Sheard/Navbar';
 import RequireAdmin from './Sheard/RequireAdmin';
 import RequireAuth from './Sheard/RequireAuth';
@@ -56,6 +57,7 @@ function App() {
         {/* Privet Route */}
 
       </Routes>
+      <Footer></Footer>
       <ToastContainer></ToastContainer>
     </div>
   );

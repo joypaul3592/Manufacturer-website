@@ -33,7 +33,6 @@ const MyOdersRow = ({ product, setReload }) => {
     }
 
 
-    console.log(product.price, product.quantity)
     const totalPrice = (parseInt(product.price) * parseInt(product.quantity))
 
 
@@ -59,8 +58,9 @@ const MyOdersRow = ({ product, setReload }) => {
                 {product.paid ? <p className=' text-xl text-green-800 font-semibold ml-2'>Paid</p> : <Link to={`/dashboard/payment/${product._id}`}><button className='py-1 px-4 bg-green-800 text-white rounded'>Pay</button></Link>}
             </td>
             <td>
-                <button onClick={() => deleteItems(product._id, product.name)} className='py-1 px-4 bg-red-800 text-white rounded'>Cancle</button>
-
+                {product.paid ? <div><p className=' text-xs font-semibold'>Transection ID :</p>
+                    <p className=' text-xs font-semibold'>{product.transactionId}</p></div> : <button onClick={() => deleteItems(product._id, product.name)} className='py-1 px-4 bg-red-800 text-white rounded'>Cancle</button>
+                }
             </td>
 
         </tr>

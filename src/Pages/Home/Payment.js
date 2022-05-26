@@ -33,12 +33,12 @@ const Payment = () => {
 
     return (
         <div className='w-8/10 mx-auto'>
-            <div class=" bg-slate-300 ">
+            <div >
                 <div className=" max-w-6xl mx-auto">
                     <h1 className=' text-3xl font-semibold text-primary ml-7 uppercase'>Payment</h1>
                     <hr className='h-[1px] w-5/12 border-green-500 mt-3 mb-12 ml-7' />
                 </div>
-                <div class=" bg-amber-200 py-10 mb-10 ">
+                <div class="  py-10 mb-10 ">
 
                     <div class="card w-96 bg-base-100 shadow-xl mb-12 mx-auto">
                         <div class="card-body">
