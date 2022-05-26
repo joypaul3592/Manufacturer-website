@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import useProduct from '../../Hook/useProduct';
+import Loading from '../../Sheard/Loading';
 import MyOdersRow from './MyOdersRow';
 import ProductsRow from './ProductsRow';
 
 const ManageProducts = () => {
 
     const [products, setProducts] = useProduct()
+    if (!products) {
+        return <Loading></Loading>
+    }
 
     return (
         <div className="w-full ">

@@ -5,8 +5,6 @@ const ProductsRow = ({ product }) => {
 
 
 
-
-
     const [deletes, setDeletes] = useState(false)
 
 

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import Loading from '../../Sheard/Loading';
 import AdminRow from './AdminRow';
 
 const MakeAdmin = () => {
 
     const [users, setUsers] = useState([])
+
 
 
     useEffect(() => {
@@ -19,7 +21,9 @@ const MakeAdmin = () => {
     }, [users])
 
 
-
+    if (!users) {
+        return <Loading></Loading>
+    }
 
     return (
         <div className="w-full ">
