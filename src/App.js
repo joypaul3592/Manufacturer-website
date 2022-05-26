@@ -33,7 +33,7 @@ function App() {
         {/* public Route */}
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='blog' element={<Blog></Blog>}></Route>
-        <Route path='myProfile' element={<RequireAuth><MyProfile></MyProfile></RequireAuth>}></Route>
+        <Route path='myProfile' element={<MyProfile></MyProfile>}></Route>
         <Route path='productDetail/:id' element={<RequireAuth><ProductDetail></ProductDetail></RequireAuth>}></Route>
         <Route path='login' element={<Login></Login>}></Route>
         <Route path='signUp' element={<SignUp></SignUp>}></Route>
