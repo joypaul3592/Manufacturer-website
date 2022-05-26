@@ -6,7 +6,7 @@
 
 ## `Available Live Site Link :`
 
-### [https://cycle-inventory.web.app/](https://cycle-inventory.web.app/)
+### [https://vitic-application.web.app](https://vitic-application.web.app)
 
 ## `DocTreat Website Features :`
 
