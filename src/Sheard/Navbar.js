@@ -107,7 +107,7 @@ const Navbar = () => {
                                                         leaveTo="transform opacity-0 scale-95"
                                                     >
                                                         <Menu.Items className="origin-top-right pl-8 absolute right-0 mt-2 w-48 rounded-md shadow-lg py-5 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                                            <h1 className='text-green-800 text-sm font-semibold font-mono ml-4'>{user?.displayName}</h1>
+                                                            <h1 className='text-green-800 text-sm font-semibold font-mono text-center'>{user?.displayName}</h1>
                                                             <hr className='mr-8 mb-4' />
                                                             <NavLink
                                                                 to={'/myProfile'}
