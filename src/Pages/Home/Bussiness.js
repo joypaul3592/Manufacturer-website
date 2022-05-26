@@ -7,9 +7,9 @@ const Bussiness = () => {
         <div className='py-16 overflow-hidden' style={{ backgroundImage: `url(${businessBg})` }}>
             <div className=' max-w-7xl mx-auto px-10 pb-10'>
                 <h1 className='mb-12 text-4xl text-center text-primary font-bold' >MILLIONS BUSINESS TRUST US</h1>
-                <div className="shadow glass py-8 w-full lg:flex">
+                <div className="shadow glass py-8 rounded-lg md:rounded  md:pr-0 pr-8 w-full lg:flex">
 
-                    <div className="grid grid-cols-2 lg:stat lg:flex justify-around items-center mb-8 lg:mb-0">
+                    <div className="grid  grid-cols-2 lg:stat lg:flex md:justify-around justify-between items-center mb-8 lg:mb-0 mx-4">
                         <div className=" text-primary w-20 mx-auto ">
                             <DesktopComputerIcon></DesktopComputerIcon>
                         </div>

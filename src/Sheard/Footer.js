@@ -6,7 +6,7 @@ const Footer = () => {
         <div className=' bg-green-200 text-neutral-content'>
             <div className="footer p-10  max-w-7xl mx-auto px-8 flex justify-between items-center text-black">
                 <div>
-                    <img className='w-56' src={logo} alt="Logo" />
+                    <img className='md:w-56 w-20' src={logo} alt="Logo" />
                     <p>Vitic Ltd.<br />Providing reliable tech since 1992</p>
                 </div>
                 <div>
