@@ -37,9 +37,55 @@ const MakeAdmin = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {
-                        users?.map((user, index) => <AdminRow key={user._id} index={index} user={user} ></AdminRow>)
-                    }
+
+                    <tr>
+                        <td className='pl-14'>
+                            <div className="font-bold">01</div>
+                        </td>
+                        <td>
+                            <div className="font-bold">Joy Paul</div>
+                        </td>
+                        <td className='pl-8'>
+                            <button className='py-1 px-4 border border-green-800 hover:bg-green-800 hover:text-white text-green-800 rounded'>Make Admin</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td className='pl-14'>
+                            <div className="font-bold">02</div>
+                        </td>
+                        <td>
+                            <div className="font-bold">Raju Sarker</div>
+                        </td>
+                        <td className='pl-8'>
+                            <button className='py-1 px-4 border border-green-800 hover:bg-green-800 hover:text-white text-green-800 rounded'>Make Admin</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td className='pl-14'>
+                            <div className="font-bold">03</div>
+                        </td>
+                        <td>
+                            <div className="font-bold">Imran Khan</div>
+                        </td>
+                        <td className='pl-16'>
+                            <button className=' text-green-800 font-medium '> Admin</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td className='pl-14'>
+                            <div className="font-bold">04</div>
+                        </td>
+                        <td>
+                            <div className="font-bold">Arif Sikder</div>
+                        </td>
+                        <td className='pl-16'>
+                            <button className=' text-green-800 font-medium '> Admin</button>
+                        </td>
+                    </tr>
+
                 </tbody>
 
             </table>

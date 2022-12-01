@@ -27,40 +27,25 @@ const DashboardSideBare = ({ children }) => {
 
                 <div className="drawer-side  ">
                     <label for="my-drawer-2" className="drawer-overlay bg-green-500"></label>
-                    <ul className="menu p-4 bg-base-100  overflow-y-auto w-80 text-base-content shadow-xl border-r-2">
+                    <ul className="menu p-4 bg-base-100  overflow-y-auto w-80 min-h-screen text-base-content shadow-xl border-r-2">
                         {/* User Route */}
 
 
-                        {/* Commoun Route */}
-                        <li><NavLink to='myProfile'>My Profile</NavLink></li>
+                        <li><NavLink to='myOrders'>My Orders</NavLink></li>
 
 
-
-
-                        {
-                            !admin && <li><NavLink to='myOrders'>My Orders</NavLink></li>
-                        }
-                        {
-                            !admin && <li><NavLink to='addReview'>Add Review</NavLink></li>
-                        }
-
-
-
+                        <li><NavLink to='addReview'>Add Review</NavLink></li>
 
                         {/* Admin Route */}
 
-                        {
-                            admin && <li><NavLink to='manageOrders'>Manage Orders</NavLink></li>
-                        }
-                        {
-                            admin && <li><NavLink to='addProduct'>Add Product</NavLink></li>
-                        }
-                        {
-                            admin && <li><NavLink to='manageProducts'>Manage Products</NavLink></li>
-                        }
-                        {
-                            admin && <li><NavLink to='makeAdmin'>Make Admin</NavLink></li>
-                        }
+                        <li><NavLink to='manageOrders'>Manage Orders</NavLink></li>
+
+                        <li><NavLink to='addProduct'>Add Product</NavLink></li>
+
+                        <li><NavLink to='manageProducts'>Manage Products</NavLink></li>
+
+                        <li><NavLink to='makeAdmin'>Make Admin</NavLink></li>
+
 
                     </ul>
 

@@ -10,7 +10,7 @@ const Product = ({ product }) => {
 
 
     return (
-        <div className="card bg-base-100 shadow-xl">
+        <div className="card bg-base-100 shadow-xl hover:shadow-sm transition-all duration-200 ease-in-out">
             <figure><img className='h-80 w-full' src={product.image} alt="Shoes" /></figure>
             <div className="card-body text-center">
                 <div className="flex justify-center ">

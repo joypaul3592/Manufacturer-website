@@ -21,15 +21,15 @@ const MyOrders = () => {
 
             fetch(`https://vast-headland-56370.herokuapp.com/userProduct/${email}`, {
                 method: 'GET',
-                headers: {
-                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-                }
+                // headers: {
+                //     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                // }
             })
                 .then(res => {
                     if (res.status === 401 || res.status === 403) {
-                        signOut(auth)
+                        // signOut(auth)
                         localStorage.removeItem('accessToken');
-                        navigate('/')
+                        // navigate('/')
                     }
                     return res.json()
                 })
@@ -42,7 +42,7 @@ const MyOrders = () => {
         }
         getProducts()
 
-    }, [user, reload])
+    }, [user])
 
     console.log(userProducts);
 

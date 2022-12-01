@@ -21,7 +21,7 @@ const AdminRow = ({ user, index }) => {
                 return res.json()
             })
             .then(data => {
-                if (data.modifiedCount > 0) {
+                if (data?.modifiedCount > 0) {
                     toast.success('Successfully Made Admin');
 
                 }
@@ -36,11 +36,12 @@ const AdminRow = ({ user, index }) => {
                 <div className="font-bold">{index + 1}</div>
             </td>
             <td>
-                <div className="font-bold">{user.email}</div>
+                <div className="font-bold">{user?.email}</div>
             </td>
 
             <td className='pl-8'>
-                {role !== 'admin' ? <button onClick={makeAdmin} className='py-1 px-4 border border-green-800 hover:bg-green-800 hover:text-white text-green-800 rounded'>Make Admin</button> : <h1 className=' text-lg text-purple-800 ml-8 font-semibold'>Admin</h1>}
+                <button onClick={makeAdmin} className='py-1 px-4 border border-green-800 hover:bg-green-800 hover:text-white text-green-800 rounded'>Make Admin</button>
+                {/* : <h1 className=' text-lg text-purple-800 ml-8 font-semibold'>Admin</h1> */}
             </td>
 
         </tr>

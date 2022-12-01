@@ -41,17 +41,17 @@ function App() {
 
 
         {/* Privet Route */}
-        <Route path='dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
-          <Route path='payment/:id' element={<RequireAuth><Payment></Payment></RequireAuth>}></Route>
-          <Route path='myOrders' element={<RequireAuth><MyOrders></MyOrders></RequireAuth>}></Route>
-          <Route path='addReview' element={<RequireAuth><AddReview></AddReview></RequireAuth>}></Route>
-          <Route path='myProfile' element={<RequireAuth><DasMyProfiles></DasMyProfiles></RequireAuth>}></Route>
+        <Route path='dashboard' element={<Dashboard></Dashboard>}>
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
+          <Route path='myOrders' element={<MyOrders></MyOrders>}></Route>
+          <Route path='addReview' element={<AddReview></AddReview>}></Route>
+          <Route path='myProfile' element={<DasMyProfiles></DasMyProfiles>}></Route>
 
           {/* for admin */}
-          <Route path='manageOrders' element={<RequireAdmin><ManageOrders></ManageOrders></RequireAdmin>}></Route>
-          <Route path='manageProducts' element={<RequireAdmin><ManageProducts></ManageProducts></RequireAdmin>}></Route>
-          <Route path='makeAdmin' element={<RequireAdmin><MakeAdmin></MakeAdmin></RequireAdmin>}></Route>
-          <Route path='addProduct' element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>}></Route>
+          <Route path='manageOrders' element={<ManageOrders></ManageOrders>}></Route>
+          <Route path='manageProducts' element={<ManageProducts></ManageProducts>}></Route>
+          <Route path='makeAdmin' element={<MakeAdmin></MakeAdmin>}></Route>
+          <Route path='addProduct' element={<AddProduct></AddProduct>}></Route>
 
         </Route>
         {/* Privet Route */}

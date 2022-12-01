@@ -32,11 +32,13 @@ const ManageOrders = () => {
                         <th className='pl-7'>Status</th>
                     </tr>
                 </thead>
-                <tbody>
-                    {
-                        products?.map(product => <OrdersRow key={product._id} product={product} refetch={refetch} setReload={setReload}></OrdersRow>)
-                    }
-                </tbody>
+                {products ?
+                    <tbody>
+                        {
+                            products?.map(product => <OrdersRow key={product._id} product={product} refetch={refetch} setReload={setReload}></OrdersRow>)
+                        }
+                    </tbody> : <h1 className=' ml-10 mt-10 text-xl font-medium text-green-600'>Please Login</h1>
+                }
 
             </table>
         </div>

@@ -5,6 +5,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import auth from '../../Firebase/Firebase.init';
+import userImg from '../../assect/user.png'
 
 
 const AddReview = () => {
@@ -84,7 +85,11 @@ const AddReview = () => {
 
                     <div className="avatar absolute md:top-[-20%] top-[-12%] lg:left-[45%] left-[42%]">
                         <div className="md:w-24 w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                            <img src={user?.photoURL} />
+                            {
+                                user?.photoURL ? <img src={user?.photoURL} /> : <img src={userImg} alt="userImg" />
+                            }
+
+
                         </div>
                     </div>
 

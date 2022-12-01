@@ -50,7 +50,7 @@ const Navbar = () => {
                                 <div>
                                     <Link className="flex-shrink-0 flex items-center h-full" to={'/'}>
                                         <img
-                                            className="block h-6 w-auto"
+                                            className="block h-12 w-auto"
                                             src={logo}
                                             alt="Workflow"
                                         />
@@ -67,17 +67,11 @@ const Navbar = () => {
                                             className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
                                         >Blog</NavLink>
                                         <NavLink
-                                            to={'myProfile'}
+                                            to={'dashboard/manageOrders'}
                                             className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
-                                        >My Profile
+                                        >Dashboard
                                         </NavLink>
-                                        {
-                                            user?.uid && <NavLink
-                                                to={'dashboard/myProfile'}
-                                                className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
-                                            >Dashboard
-                                            </NavLink>
-                                        }
+
 
                                     </div>
                                 </div>
@@ -109,11 +103,7 @@ const Navbar = () => {
                                                         <Menu.Items className="origin-top-right pl-8 absolute right-0 mt-2 w-48 rounded-md shadow-lg py-5 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                                                             <h1 className='text-green-800 text-sm font-semibold font-mono text-center'>{user?.displayName}</h1>
                                                             <hr className='mr-8 mb-4' />
-                                                            <NavLink
-                                                                to={'/myProfile'}
-                                                                className={({ isActive }) => (`block mt-3  text-base font-semibold ${isActive ? 'text-blue-500' : 'text-black'}`)}>
-                                                                My Profile
-                                                            </NavLink>
+
 
                                                             <NavLink
                                                                 to={'/'}
@@ -160,13 +150,12 @@ const Navbar = () => {
                                 className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
                             >My Profile
                             </NavLink>
-                            {
-                                user?.uid && <NavLink
-                                    to={'dashboard/myProfile'}
-                                    className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
-                                >Dashboard
-                                </NavLink>
-                            }
+                            <NavLink
+                                to={'dashboard/myProfile'}
+                                className={({ isActive }) => (`px-3 py-2 rounded-md text-md font-medium ${isActive ? 'text-purple-500' : 'text-black'}`)}
+                            >Dashboard
+                            </NavLink>
+
                         </div>
                         <div className="px-2 pt-2 pb-3 space-y-1">
                             <div className="flex items-center justify-center h-full">

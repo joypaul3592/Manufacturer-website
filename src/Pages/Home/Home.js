@@ -7,6 +7,7 @@ import Header from './Header';
 import Offer from './Offer';
 import Products from './Products';
 import Review from './Review';
+import Team from './Team';
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
             <Bussiness></Bussiness>
             <Review></Review>
             <Offer></Offer>
+            <Team />
             <Contact></Contact>
         </div>
     );

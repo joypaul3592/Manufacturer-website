@@ -6,7 +6,7 @@ const ReviewRow = ({ review }) => {
     const reviewText = review.review.slice(0, 170)
 
     return (
-        <div className="card  bg-base-100 shadow-2xl">
+        <div className="card  bg-base-100 cursor-pointer shadow-xl hover:shadow-md transition-all duration-200 ease-in-out">
             <div className="card-body">
                 <div className="card-actions justify-center">
                     <div className="avatar">
@@ -27,7 +27,7 @@ const ReviewRow = ({ review }) => {
                         </div>
                         <p className=' ml-2'>{review.ratting}</p>
                     </div>
-                    <p className=' text-right'>{review.name}</p>
+                    <p className=' text-right font-medium text-sm'>{review.name}</p>
                 </div>
             </div>
         </div>
