@@ -19,7 +19,7 @@ const MyOrders = () => {
     useEffect(() => {
         const getProducts = async () => {
 
-            fetch(`https://vast-headland-56370.herokuapp.com/userProduct/${email}`, {
+            fetch(`https://menufecturer-website-server-production.up.railway.app/userProduct/${email}`, {
                 method: 'GET',
                 // headers: {
                 //     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

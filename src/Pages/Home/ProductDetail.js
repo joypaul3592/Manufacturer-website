@@ -20,7 +20,7 @@ const ProductDetail = () => {
     useEffect(() => {
 
         const fetchData = async () => {
-            const { data } = await axios.get(`https://vast-headland-56370.herokuapp.com/productDtails/${id}`, {
+            const { data } = await axios.get(`https://menufecturer-website-server-production.up.railway.app/productDtails/${id}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -77,14 +77,14 @@ const ProductDetail = () => {
                 }
 
                 try {
-                    const { data } = await axios.post(`https://vast-headland-56370.herokuapp.com/orders`, productDetail, {
+                    const { data } = await axios.post(`https://menufecturer-website-server-production.up.railway.app/orders`, productDetail, {
                         method: 'POST',
                         headers: {
                             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                         }
                     });
 
-                    const { updateData } = await axios.put(`https://vast-headland-56370.herokuapp.com/updateProduct/${id}`, stock, {
+                    const { updateData } = await axios.put(`https://menufecturer-website-server-production.up.railway.app/updateProduct/${id}`, stock, {
                         method: 'PUT',
                         headers: {
                             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

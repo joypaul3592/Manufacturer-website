@@ -9,7 +9,7 @@ const Review = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('https://vast-headland-56370.herokuapp.com/review')
+        fetch('https://menufecturer-website-server-production.up.railway.app/review')
             .then(res => res.json())
             .then(data => {
                 console.log(data.data);

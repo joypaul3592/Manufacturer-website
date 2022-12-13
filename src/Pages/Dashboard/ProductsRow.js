@@ -17,7 +17,7 @@ const ProductsRow = ({ product }) => {
         const deleteItems = window.confirm(`Want To Delete ${name} ?`)
         if (deleteItems) {
 
-            fetch(`https://vast-headland-56370.herokuapp.com/userProduct/${id}`, {
+            fetch(`https://menufecturer-website-server-production.up.railway.app/userProduct/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())

@@ -9,7 +9,7 @@ const MakeAdmin = () => {
 
 
     useEffect(() => {
-        fetch('https://vast-headland-56370.herokuapp.com/users', {
+        fetch('https://menufecturer-website-server-production.up.railway.app/users', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

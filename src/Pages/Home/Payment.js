@@ -11,7 +11,7 @@ const stripePromise = loadStripe('pk_test_51L3NBXCh06gzhB0S1geM5yium3k895ze2SdDl
 const Payment = () => {
     const { id } = useParams()
 
-    const url = `https://vast-headland-56370.herokuapp.com/orderProduct/${id}`
+    const url = `https://menufecturer-website-server-production.up.railway.app/orderProduct/${id}`
 
     const { data, isLoading } = useQuery(['payment', id], () => fetch(url, {
         method: 'GET',

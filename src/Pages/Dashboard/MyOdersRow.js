@@ -16,7 +16,7 @@ const MyOdersRow = ({ product, setReload }) => {
 
         if (deleteItems) {
 
-            fetch(`https://vast-headland-56370.herokuapp.com/userOrder/${id}`, {
+            fetch(`https://menufecturer-website-server-production.up.railway.app/userOrder/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())

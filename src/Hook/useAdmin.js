@@ -9,7 +9,7 @@ const useAdmin = user => {
 
 
         if (email) {
-            fetch(`https://vast-headland-56370.herokuapp.com/admin/${email}`, {
+            fetch(`https://menufecturer-website-server-production.up.railway.app/admin/${email}`, {
                 method: 'GET',
                 headers: {
                     'content-type': 'application/json',

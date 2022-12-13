@@ -12,7 +12,7 @@ const OrdersRow = ({ product, refetch }) => {
         const deleteItems = window.confirm(`Want To Delete ${name} ?`)
         if (deleteItems) {
 
-            fetch(`https://vast-headland-56370.herokuapp.com/userOrder/${id}`, {
+            fetch(`https://menufecturer-website-server-production.up.railway.app/userOrder/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())
@@ -36,7 +36,7 @@ const OrdersRow = ({ product, refetch }) => {
             status: 'shipped',
         }
 
-        const { data } = await axios.put(`https://vast-headland-56370.herokuapp.com/paidUpInfo/${id}`, paidInfo, {
+        const { data } = await axios.put(`https://menufecturer-website-server-production.up.railway.app/paidUpInfo/${id}`, paidInfo, {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

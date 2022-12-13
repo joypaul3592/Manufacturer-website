@@ -32,7 +32,7 @@ const AddReview = () => {
 
         try {
 
-            const { data } = await axios.post(`https://vast-headland-56370.herokuapp.com/review`, review,
+            const { data } = await axios.post(`https://menufecturer-website-server-production.up.railway.app/review`, review,
                 {
                     method: 'POST',
                     headers: {

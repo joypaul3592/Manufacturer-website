@@ -14,7 +14,7 @@ const DasMyProfiles = () => {
     const [userInfo, setUserInfo] = useState({});
 
     useEffect(() => {
-        fetch(`https://vast-headland-56370.herokuapp.com/upUserInfo/${email}`)
+        fetch(`https://menufecturer-website-server-production.up.railway.app/upUserInfo/${email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data.data);

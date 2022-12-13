@@ -21,7 +21,7 @@ const DashboardSideBare = ({ children }) => {
             <div className="drawer w-full drawer-mobile lg:ml-8 h-full">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
 
-                <div className="drawer-content ">
+                <div className="drawer-content  ">
                     {children}
                 </div>
 

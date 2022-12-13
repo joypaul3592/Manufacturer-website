@@ -8,7 +8,7 @@ const AdminRow = ({ user, index }) => {
     console.log(email);
 
     const makeAdmin = () => {
-        fetch(`https://vast-headland-56370.herokuapp.com/user/admin/${email}`, {
+        fetch(`https://menufecturer-website-server-production.up.railway.app/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

@@ -10,7 +10,7 @@ function useProduct() {
     useEffect(() => {
 
         const fetchData = async () => {
-            const { data } = await axios.get(`https://vast-headland-56370.herokuapp.com/product`);
+            const { data } = await axios.get(`https://menufecturer-website-server-production.up.railway.app/product`);
             if (!data?.success) return toast.error(data?.error);
             setProducts(data?.data);
         }

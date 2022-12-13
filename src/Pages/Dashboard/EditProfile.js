@@ -30,7 +30,7 @@ const EditProfile = () => {
         console.log(userInfo);
 
         try {
-            const { data } = await axios.put(`https://vast-headland-56370.herokuapp.com/userInfo/${email}`, userInfo, {
+            const { data } = await axios.put(`https://menufecturer-website-server-production.up.railway.app/userInfo/${email}`, userInfo, {
                 method: 'PUT',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
